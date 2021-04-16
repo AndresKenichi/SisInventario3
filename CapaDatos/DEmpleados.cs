@@ -158,6 +158,213 @@ namespace CapaDatos
 
         }
 
+        //Metodo Editar 
+        public string Editar(DEmpleados Empleados)
+        {
+            string rpta = "";
+            //Creamos una instancia de la clase SqlConnection
+            SqlConnection SqlCon = new SqlConnection();
+
+            //Declaramos un capturador de errores
+            try
+            {
+                //Codigo para establecer la conexion
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Codigo para realizar la comunicacion con nuestro proc insercion
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = SqlCon;
+                sqlCmd.CommandText = "speditar_empleado";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdEmpleado = new SqlParameter();
+                ParIdEmpleado.ParameterName = "@idempleado";
+                ParIdEmpleado.SqlDbType = SqlDbType.Int;
+                ParIdEmpleado.Value = Empleados.Idempleado;
+                sqlCmd.Parameters.Add(ParIdEmpleado);
+
+                SqlParameter ParNombre = new SqlParameter();
+                ParNombre.ParameterName = "@nombre";
+                ParNombre.SqlDbType = SqlDbType.VarChar;
+                ParNombre.Size = 50;
+                ParNombre.Value = Empleados.Nombre;
+                sqlCmd.Parameters.Add(ParNombre);
+
+                SqlParameter ParApellido = new SqlParameter();
+                ParApellido.ParameterName = "@apellido";
+                ParApellido.SqlDbType = SqlDbType.VarChar;
+                ParApellido.Size = 50;
+                ParApellido.Value = Empleados.Apellido;
+                sqlCmd.Parameters.Add(ParApellido);
+
+                SqlParameter ParTelefono = new SqlParameter();
+                ParTelefono.ParameterName = "@telefono";
+                ParTelefono.SqlDbType = SqlDbType.VarChar;
+                ParTelefono.Size = 10;
+                ParTelefono.Value = Empleados.Telefono;
+                sqlCmd.Parameters.Add(ParTelefono);
+
+                SqlParameter ParDireccion = new SqlParameter();
+                ParDireccion.ParameterName = "@direccion";
+                ParDireccion.SqlDbType = SqlDbType.VarChar;
+                ParDireccion.Size = 50;
+                ParDireccion.Value = Empleados.Direccion;
+                sqlCmd.Parameters.Add(ParDireccion);
+
+                SqlParameter ParDui = new SqlParameter();
+                ParDui.ParameterName = "@dui";
+                ParDui.SqlDbType = SqlDbType.VarChar;
+                ParDui.Size = 16;
+                ParDui.Value = Empleados.Dui;
+                sqlCmd.Parameters.Add(ParDui);
+
+
+                SqlParameter ParNit = new SqlParameter();
+                ParNit.ParameterName = "@nit";
+                ParNit.SqlDbType = SqlDbType.VarChar;
+                ParNit.Size = 20;
+                ParNit.Value = Empleados.Nit;
+                sqlCmd.Parameters.Add(ParNit);
+
+                SqlParameter ParId_Cargo = new SqlParameter();
+                ParId_Cargo.ParameterName = "@id_cargo";
+                ParId_Cargo.SqlDbType = SqlDbType.Int;
+                ParId_Cargo.Value = Empleados.Id_cargo;
+                sqlCmd.Parameters.Add(ParId_Cargo);
+
+                SqlParameter ParEstado = new SqlParameter();
+                ParEstado.ParameterName = "@estado";
+                ParEstado.SqlDbType = SqlDbType.Int;
+                ParEstado.Value = Empleados.Estado;
+                sqlCmd.Parameters.Add(ParEstado);
+
+
+                //Ejecutamos nuestro Comando
+
+                rpta = sqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se Actualizo el Registro";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return rpta;
+
+
+        }
+
+        //Metodo para Eliminar datos
+        public string Eliminar(DEmpleados Empleados)
+        {
+            string rpta = "";
+            //Creamos una instancia de la clase SqlConnection
+            SqlConnection SqlCon = new SqlConnection();
+
+            //Declaramos un capturador de errores
+            try
+            {
+                //Codigo para establecer la conexion
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCon.Open();
+
+                //Codigo para realizar la comunicacion con nuestro proc insercion
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = SqlCon;
+                sqlCmd.CommandText = "speliminar_empleado";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParIdEmpleado = new SqlParameter();
+                ParIdEmpleado.ParameterName = "@idempleado";
+                ParIdEmpleado.SqlDbType = SqlDbType.Int;
+                ParIdEmpleado.Value = Empleados.Idempleado;
+                sqlCmd.Parameters.Add(ParIdEmpleado);
+
+
+                //Ejecutamos nuestro Comando
+
+                rpta = sqlCmd.ExecuteNonQuery() == 1 ? "OK" : "No se Elimino el Registro";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return rpta;
+        }
+
+        //Metodo para mostrar todos los registros de la tabla categoria
+        public DataTable Mostrar()
+        {
+            DataTable DtResultado = new DataTable("empleados");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spmostrar_empleado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        //Metodo para BuscarNombre
+        public DataTable BuscarNombre(DEmpleados Empleados)
+        {
+            DataTable DtResultado = new DataTable("empleados");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spbuscar_empleado_nombre";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = Empleados.TextoBuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
 
 
 
