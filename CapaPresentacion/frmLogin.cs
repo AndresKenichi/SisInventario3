@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using CapaNegocio;
+using Loggin;
 
 namespace CapaPresentacion
 {
@@ -37,20 +38,21 @@ namespace CapaPresentacion
         {
             DataTable Datos = CapaNegocio.NUsuarios.Login(this.txtCorreo.Text, this.txtClave.Text);
             //Evaluar si existe el Usuario
+            /*
+            Inicio frm = new Inicio();
+            frm.Show();
+            this.Hide();
+            */
             if (Datos.Rows.Count==0)
             {
                 MessageBox.Show("No tiene Acceso al Sistema","Sistema de Ventas",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
-                frmEmpleados frm = new frmEmpleados();
+                Inicio frm = new Inicio();
                 frm.Show();
                 this.Hide();
-
-
             }
-
-
 
         }
     }

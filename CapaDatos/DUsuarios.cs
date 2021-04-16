@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace CapaDatos
 {
    public class DUsuarios
     {
-
+        Conexion conexion = new Conexion();
         private int _Idusuario;
         private int _Idempleado;
         private int _Nombre;
@@ -84,7 +85,169 @@ namespace CapaDatos
             return DtResultado;
 
         }
+        public string Insertar(DUsuarios usuarios)
+        {
+            conexion.abrir();
+            string rpta = "";
+            string cad = "INSERT INTO usuarios(id_empleado,correo,clave,tipo) VALUES(" + _Idusuario + ",'" + _Correo + "','" + _Clave + "'," + _Tipo + ")";
+            //Declaramos un capturador de errores
+            try
+            {
 
+                //Codigo para realizar la comunicacion con nuestro proc insercion
+                SqlCommand sqlCmd = new SqlCommand(cad);
+                sqlCmd.Connection = conexion.Conectarbd;
+
+               
+                //Ejecutamos nuestro Comando
+                
+                rpta = sqlCmd.ExecuteNonQuery() == 1 ? "INGRESADO" : "NO SE INGRESO EL REGISTRO";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return rpta;
+
+        }
+        public string Eliminar(DUsuarios usuarios)
+        {
+            conexion.abrir();
+            string m = "";
+            try
+            {
+                String cad = "DELETE FROM usuarios where id_empleado = " + _Idusuario + "";
+
+                SqlCommand comd = new SqlCommand(cad);
+                comd.Connection = conexion.Conectarbd;
+
+                m = comd.ExecuteNonQuery() == 1 ? "ELIMINADO" : "NO SE ELIMINO EL REGISTRO";
+
+            }
+            catch (Exception ex)
+            {
+                m = ex.Message;
+                return m;
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return m;
+        }
+        public int validateUser(int id)
+        {
+
+            conexion.abrir();
+            int m = -1;
+            try
+            {
+                //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
+                String cad = "SELECT count(id_usuario) AS Num FROM usuarios where id_empleado=" + Idempleado + "";
+
+                SqlCommand comd = new SqlCommand(cad);
+                comd.Connection = conexion.Conectarbd;
+
+                SqlDataReader d = comd.ExecuteReader();
+
+                if (d.Read())
+                {
+
+                    m = Int32.Parse(d["Num"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return 666;
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return m;
+        }
+        public ArrayList UserInfo(DUsuarios usuarios)
+        {
+            //La dinamica es guardar en un ArrayList el nombre y el cargo, luego de la busqueda en Usuarios cuando precionemos
+            //el boton "Buscar"
+            conexion.abrir();
+
+            ArrayList us = new ArrayList();
+
+            try
+            {
+                //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
+                String cad = "SELECT (e.nombre +' '+ e.apellido) AS Nombre,c.cargo FROM empleados e INNER JOIN cargos c ON e.id_cargo = c.id_cargo where e.id_empleado = " + _Idusuario + "";
+
+                SqlCommand comd = new SqlCommand(cad);
+                comd.Connection = conexion.Conectarbd;
+
+                SqlDataReader rd = comd.ExecuteReader();
+                //Leemos las filas
+                if (rd.HasRows)
+                {
+                    //Leemos columnas
+                    while (rd.Read())
+                    {
+                        //Asignamos cada columna al ArrayList, al final lo retornaremos
+                        us.Add(rd.GetString(0));
+                        us.Add(rd.GetString(1));
+                    }
+                }
+
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                us.Add(ex.Message);
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return us;
+        }
+
+        public string Modificar(DUsuarios usuarios)
+        {
+            conexion.abrir();
+            string rpta = "";
+            string cad = "UPDATE usuarios SET correo = '" + _Correo + "',clave='" + _Clave + "',tipo='" + _Tipo + "' WHERE id_empleado=" + _Idusuario + "";
+            //Declaramos un capturador de errores
+            try
+            {
+
+                //Codigo para realizar la comunicacion con nuestro proc insercion
+                SqlCommand sqlCmd = new SqlCommand(cad);
+                sqlCmd.Connection = conexion.Conectarbd;
+
+                rpta = sqlCmd.ExecuteNonQuery() == 1 ? "MODIFICADO" : "NO SE ACTUALIZO EL REGISTRO";
+
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return rpta;
+
+        }
 
 
     }

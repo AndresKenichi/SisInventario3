@@ -21,7 +21,6 @@ namespace CapaDatos
         private string _TextoBuscar;
 
 
-
         public int Idempleado { get => _Idempleado; set => _Idempleado = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Apellido { get => _Apellido; set => _Apellido = value; }
@@ -63,7 +62,6 @@ namespace CapaDatos
             string rpta = "";
             //Creamos una instancia de la clase SqlConnection
             SqlConnection SqlCon = new SqlConnection();
-
             //Declaramos un capturador de errores
             try
             {
