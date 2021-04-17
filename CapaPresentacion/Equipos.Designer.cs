@@ -32,7 +32,6 @@ namespace Loggin
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@ namespace Loggin
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -75,13 +75,6 @@ namespace Loggin
             this.checkBox3.Text = "DEPARTAMENTOS";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(136, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -106,7 +99,7 @@ namespace Loggin
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 47);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Agregar";
+            this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -115,7 +108,7 @@ namespace Loggin
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 47);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Agregar";
+            this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -131,7 +124,7 @@ namespace Loggin
             // 
             this.textBox2.Location = new System.Drawing.Point(462, 125);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.Size = new System.Drawing.Size(108, 23);
             this.textBox2.TabIndex = 8;
             // 
             // label3
@@ -147,7 +140,7 @@ namespace Loggin
             // 
             this.textBox3.Location = new System.Drawing.Point(462, 189);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
+            this.textBox3.Size = new System.Drawing.Size(108, 23);
             this.textBox3.TabIndex = 10;
             // 
             // label4
@@ -165,6 +158,13 @@ namespace Loggin
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(125, 152);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 3;
             // 
             // Equipos
             // 
@@ -199,7 +199,6 @@ namespace Loggin
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -210,5 +209,6 @@ namespace Loggin
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

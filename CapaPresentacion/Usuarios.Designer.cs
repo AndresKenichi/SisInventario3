@@ -54,10 +54,13 @@ namespace Loggin
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chMostrar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarUs
@@ -126,6 +129,7 @@ namespace Loggin
             // 
             this.txtCodigoUs.Location = new System.Drawing.Point(412, 51);
             this.txtCodigoUs.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.txtCodigoUs.MaxLength = 6;
             this.txtCodigoUs.Name = "txtCodigoUs";
             this.txtCodigoUs.Size = new System.Drawing.Size(200, 23);
             this.txtCodigoUs.TabIndex = 6;
@@ -144,17 +148,21 @@ namespace Loggin
             // 
             // txtConClaveUs
             // 
+            this.txtConClaveUs.HideSelection = false;
             this.txtConClaveUs.Location = new System.Drawing.Point(539, 280);
             this.txtConClaveUs.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.txtConClaveUs.Name = "txtConClaveUs";
+            this.txtConClaveUs.PasswordChar = '*';
             this.txtConClaveUs.Size = new System.Drawing.Size(130, 23);
             this.txtConClaveUs.TabIndex = 8;
             // 
             // txtClaveUs
             // 
+            this.txtClaveUs.HideSelection = false;
             this.txtClaveUs.Location = new System.Drawing.Point(539, 235);
             this.txtClaveUs.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.txtClaveUs.Name = "txtClaveUs";
+            this.txtClaveUs.PasswordChar = '*';
             this.txtClaveUs.Size = new System.Drawing.Size(130, 23);
             this.txtClaveUs.TabIndex = 9;
             // 
@@ -277,11 +285,27 @@ namespace Loggin
             // 
             this.errorProvider4.ContainerControl = this;
             // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // chMostrar
+            // 
+            this.chMostrar.AutoSize = true;
+            this.chMostrar.Location = new System.Drawing.Point(539, 311);
+            this.chMostrar.Name = "chMostrar";
+            this.chMostrar.Size = new System.Drawing.Size(99, 19);
+            this.chMostrar.TabIndex = 20;
+            this.chMostrar.Text = "Mostrar Clave";
+            this.chMostrar.UseVisualStyleBackColor = true;
+            this.chMostrar.CheckedChanged += new System.EventHandler(this.chMostrar_CheckedChanged);
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1048, 542);
+            this.Controls.Add(this.chMostrar);
             this.Controls.Add(this.btnEliminarUs);
             this.Controls.Add(this.lbCargoUs);
             this.Controls.Add(this.lbNombreUs);
@@ -310,6 +334,7 @@ namespace Loggin
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,5 +367,7 @@ namespace Loggin
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
         private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.CheckBox chMostrar;
     }
 }

@@ -10,6 +10,7 @@ namespace CapaDatos
    public class DUsuarios
     {
         Conexion conexion = new Conexion();
+
         private int _Idusuario;
         private int _Idempleado;
         private int _Nombre;
@@ -28,6 +29,7 @@ namespace CapaDatos
 
         public DUsuarios()
         {
+
         }
 
         public DUsuarios(int idusuario, int idempleado, int nombre, string telefono, string correo, string clave, int tipo)
@@ -143,7 +145,7 @@ namespace CapaDatos
 
             return m;
         }
-        public int validateUser(int id)
+        public int validateUser(DUsuarios usuarios)
         {
 
             conexion.abrir();
@@ -151,7 +153,7 @@ namespace CapaDatos
             try
             {
                 //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
-                String cad = "SELECT count(id_usuario) AS Num FROM usuarios where id_empleado=" + Idempleado + "";
+                String cad = "SELECT count(id_usuario) AS Num FROM usuarios where id_empleado=" + _Idusuario + "";
 
                 SqlCommand comd = new SqlCommand(cad);
                 comd.Connection = conexion.Conectarbd;
@@ -160,7 +162,6 @@ namespace CapaDatos
 
                 if (d.Read())
                 {
-
                     m = Int32.Parse(d["Num"].ToString());
                 }
 
@@ -176,6 +177,8 @@ namespace CapaDatos
 
             return m;
         }
+
+
         public ArrayList UserInfo(DUsuarios usuarios)
         {
             //La dinamica es guardar en un ArrayList el nombre y el cargo, luego de la busqueda en Usuarios cuando precionemos
@@ -199,9 +202,53 @@ namespace CapaDatos
                     //Leemos columnas
                     while (rd.Read())
                     {
-                        //Asignamos cada columna al ArrayList, al final lo retornaremos
+                        //Asignamos cada columna del select al ArrayList, al final lo retornaremos
                         us.Add(rd.GetString(0));
                         us.Add(rd.GetString(1));
+
+                    }
+                }
+
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                us.Add(ex.Message);
+            }
+            finally
+            {
+                if (conexion.Conectarbd.State == ConnectionState.Open) conexion.Conectarbd.Close();
+            }
+
+            return us;
+        }
+        public ArrayList UserCredentials(DUsuarios usuarios)
+        {
+            //La dinamica es guardar en un ArrayList el nombre y el cargo, luego de la busqueda en Usuarios cuando precionemos
+            //el boton "Buscar"
+            conexion.abrir();
+
+            ArrayList us = new ArrayList();
+
+            try
+            {
+                //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
+                String cad = "SELECT u.correo,u.clave,e.id_cargo FROM usuarios u INNER JOIN empleados e ON u.id_empleado = e.id_empleado where e.id_empleado = " + _Idusuario + "";
+
+                SqlCommand comd = new SqlCommand(cad);
+                comd.Connection = conexion.Conectarbd;
+
+                SqlDataReader rd = comd.ExecuteReader();
+                //Leemos las filas
+                if (rd.HasRows)
+                {
+                    //Leemos columnas
+                    while (rd.Read())
+                    {
+                        //Asignamos cada columna del select al ArrayList, al final lo retornaremos
+                        us.Add(rd.GetString(0));
+                        us.Add(rd.GetString(1));
+                        us.Add(rd.GetInt32(2));
                     }
                 }
 

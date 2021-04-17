@@ -13,6 +13,7 @@ namespace CapaNegocio
         //Método Login que llama al método Login
         //de la clase DUsuarios de la CapaDatos
         private DUsuarios Obj = new DUsuarios();
+
         public static DataTable Login(string correo, string clave)
         {
             DUsuarios Obj = new DUsuarios();
@@ -59,15 +60,29 @@ namespace CapaNegocio
             return info;
 
         }
+        public ArrayList UsuarioCredenciales(int id)
+        {
+
+            ArrayList info = new ArrayList();
+            Obj.Idusuario = id;
+
+            info = Obj.UserCredentials(Obj);
+
+            return info;
+
+        }
         public int validateUser(int id)
         {
 
             int n = -1;
 
-            n = Obj.validateUser(id);
+            Obj.Idusuario = id;
+            n = Obj.validateUser(Obj);
 
             return n;
+
         }
+
         
 
    }

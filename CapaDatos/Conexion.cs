@@ -7,7 +7,7 @@ namespace CapaDatos
 {
     class Conexion
     {
-        public static string Cn = @"Data Source=DESKTOP-I39N25J\JOSHEP; Initial Catalog=inventario2; Integrated Security=true";
+        public static string Cn = @"Data Source=DESKTOP-I39N25J\JOSHEP; Initial Catalog=inventario; Integrated Security=true";
         public SqlConnection Conectarbd = new SqlConnection();
 
         //Constructor

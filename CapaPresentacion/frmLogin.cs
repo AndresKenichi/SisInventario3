@@ -22,8 +22,6 @@ namespace CapaPresentacion
             LblHora.Text = DateTime.Now.ToString();
 
         }
-
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             LblHora.Text = DateTime.Now.ToString();
@@ -38,11 +36,6 @@ namespace CapaPresentacion
         {
             DataTable Datos = CapaNegocio.NUsuarios.Login(this.txtCorreo.Text, this.txtClave.Text);
             //Evaluar si existe el Usuario
-            /*
-            Inicio frm = new Inicio();
-            frm.Show();
-            this.Hide();
-            */
             if (Datos.Rows.Count==0)
             {
                 MessageBox.Show("No tiene Acceso al Sistema","Sistema de Ventas",MessageBoxButtons.OK,MessageBoxIcon.Error);
