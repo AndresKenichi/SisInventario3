@@ -38,7 +38,6 @@ namespace Loggin
         {
             ShowPrincipalButtons(false,false,false);
             HideItems();
-
         }
 
         private void ShowPrincipalButtons(bool a, bool b, bool c) {

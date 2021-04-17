@@ -13,7 +13,6 @@ namespace CapaNegocio
         //Método Login que llama al método Login
         //de la clase DUsuarios de la CapaDatos
         private DUsuarios Obj = new DUsuarios();
-
         public static DataTable Login(string correo, string clave)
         {
             DUsuarios Obj = new DUsuarios();
