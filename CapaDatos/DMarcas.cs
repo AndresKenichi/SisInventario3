@@ -6,25 +6,27 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-   public class DCargo
+   public class DMarcas
     {
-        private int _Idcargo;
-        private string _Nombre;
 
-        public int Idcargo { get => _Idcargo; set => _Idcargo = value; }
-        public string Nombre { get => _Nombre; set => _Nombre = value; }
+        private int _IdMarca;
+        private string _Marca;
+
+        public int IdMarca { get => _IdMarca; set => _IdMarca = value; }
+        public string Marca { get => _Marca; set => _Marca = value; }
+
 
         //Metodo para mostrar todos los registros de la tabla 
         public DataTable Mostrar()
         {
-            DataTable DtResultado = new DataTable("cargos");
+            DataTable DtResultado = new DataTable("marcas");
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "spmostrar_cargos";
+                SqlCmd.CommandText = "spmostrar_marcas";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
 
@@ -40,5 +42,6 @@ namespace CapaDatos
             return DtResultado;
 
         }
+
     }
 }

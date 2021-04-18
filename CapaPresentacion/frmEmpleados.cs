@@ -260,7 +260,7 @@ namespace CapaPresentacion
             else
             {
 
-                this.dataListado.Columns[0].Visible = true;
+                this.dataListado.Columns[0].Visible = false;
 
             }
 
