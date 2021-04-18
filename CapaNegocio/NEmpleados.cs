@@ -14,6 +14,7 @@ namespace CapaNegocio
             string direccion, string dui, string nit, int id_cargo, int estado)
         {
             DEmpleados Obj = new DEmpleados();
+
             Obj.Nombre = nombre;
             Obj.Apellido = apellido;
             Obj.Telefono = telefono;
@@ -78,6 +79,7 @@ namespace CapaNegocio
         {
             DEmpleados Obj = new DEmpleados();
             Obj.TextoBuscar = textobuscar;
+
             return Obj.BuscarNombre(Obj);
 
         }
