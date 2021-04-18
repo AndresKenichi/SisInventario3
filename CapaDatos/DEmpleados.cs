@@ -173,7 +173,7 @@ namespace CapaDatos
                 //Codigo para realizar la comunicacion con nuestro proc insercion
                 SqlCommand sqlCmd = new SqlCommand();
                 sqlCmd.Connection = SqlCon;
-                sqlCmd.CommandText = "speditar_empleado";
+                sqlCmd.CommandText = "editar_empleado";
                 sqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter ParIdEmpleado = new SqlParameter();
