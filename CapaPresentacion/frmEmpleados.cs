@@ -126,15 +126,6 @@ namespace CapaPresentacion
         }
 
 
-
-
-
-
-
-
-
-
-
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             this.Top = 0;
@@ -341,6 +332,11 @@ namespace CapaPresentacion
             this.txtEstado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["estado"].Value);
             this.cbidcargo.Enabled = true;
             this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
