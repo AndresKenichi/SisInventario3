@@ -119,7 +119,6 @@ namespace CapaDatos
                 SqlParameter ParFecha_cad = new SqlParameter();
                 ParFecha_cad.ParameterName = "@fecha_cad";
                 ParFecha_cad.SqlDbType = SqlDbType.Date;
-                ParFecha_cad.Size = 10;
                 ParFecha_cad.Value = Equipos.Fecha_cad;
                 sqlCmd.Parameters.Add(ParFecha_cad);
 
@@ -137,10 +136,18 @@ namespace CapaDatos
                 sqlCmd.Parameters.Add(ParEstado);
 
                 SqlParameter ParIdUsu = new SqlParameter();
-                ParIdUsu.ParameterName = "@idmarca";
+                ParIdUsu.ParameterName = "@id_usuario";
                 ParIdUsu.SqlDbType = SqlDbType.Int;
-                ParIdUsu.Value = Equipos.Idmarca;
+                ParIdUsu.Value = Equipos.Id_usuario;
                 sqlCmd.Parameters.Add(ParIdUsu);
+
+                SqlParameter ParFecha_m = new SqlParameter();
+                ParFecha_m.ParameterName = "@fecha_modificacion";
+                ParFecha_m.SqlDbType = SqlDbType.Date;
+                ParFecha_m.Value = Equipos.Fecha_modificacion;
+                sqlCmd.Parameters.Add(ParFecha_m);
+
+
 
 
 
@@ -244,10 +251,17 @@ namespace CapaDatos
                 sqlCmd.Parameters.Add(ParEstado);
 
                 SqlParameter ParIdUsu = new SqlParameter();
-                ParIdUsu.ParameterName = "@idmarca";
+                ParIdUsu.ParameterName = "@id_usuario";
                 ParIdUsu.SqlDbType = SqlDbType.Int;
-                ParIdUsu.Value = Equipos.Idmarca;
+                ParIdUsu.Value = Equipos.Id_usuario;
                 sqlCmd.Parameters.Add(ParIdUsu);
+
+                SqlParameter ParFecha_m = new SqlParameter();
+                ParFecha_m.ParameterName = "@fecha_modificacion";
+                ParFecha_m.SqlDbType = SqlDbType.Date;
+                ParFecha_m.Value = Equipos.Fecha_modificacion;
+                sqlCmd.Parameters.Add(ParFecha_m);
+
 
 
                 //Ejecutamos nuestro Comando
