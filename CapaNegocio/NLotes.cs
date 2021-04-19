@@ -14,7 +14,6 @@ namespace CapaNegocio
 
         public NLotes(int codigo, int cantidad, string gestion, DateTime fecha)
         {
-            
             this.cantidad = cantidad;
             this.gestion = gestion;
             this.fecha = fecha;
@@ -39,6 +38,12 @@ namespace CapaNegocio
 
             return k.insertarLote(k);
 
+        }
+        public int idL() {
+
+            DLotes s = new DLotes();
+
+            return s.lastId();
         }
     }
 

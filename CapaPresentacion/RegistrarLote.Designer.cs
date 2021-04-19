@@ -33,10 +33,6 @@ namespace Loggin
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarLote));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridLotes = new System.Windows.Forms.DataGridView();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +44,11 @@ namespace Loggin
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,6 +68,7 @@ namespace Loggin
             this.gridLotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.fecha,
             this.cantidad,
             this.gestion,
@@ -78,27 +80,6 @@ namespace Loggin
             this.gridLotes.TabIndex = 0;
             this.gridLotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellContentClick);
             this.gridLotes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellValueChanged_1);
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha Ingreso";
-            this.fecha.MaxInputLength = 10;
-            this.fecha.Name = "fecha";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // gestion
-            // 
-            this.gestion.HeaderText = "Gestion";
-            this.gestion.Name = "gestion";
-            // 
-            // ChOption
-            // 
-            this.ChOption.HeaderText = "";
-            this.ChOption.Name = "ChOption";
             // 
             // label1
             // 
@@ -194,6 +175,33 @@ namespace Loggin
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // id
+            // 
+            this.id.HeaderText = "Codigo";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha Ingreso";
+            this.fecha.MaxInputLength = 10;
+            this.fecha.Name = "fecha";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // gestion
+            // 
+            this.gestion.HeaderText = "Gestion";
+            this.gestion.Name = "gestion";
+            // 
+            // ChOption
+            // 
+            this.ChOption.HeaderText = "";
+            this.ChOption.Name = "ChOption";
+            // 
             // RegistrarLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -236,11 +244,12 @@ namespace Loggin
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gridLotes;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn gestion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ChOption;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

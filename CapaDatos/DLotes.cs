@@ -43,22 +43,55 @@ namespace CapaDatos
             string mss = "";
             try
             {
-                SqlCommand add = new SqlCommand("INSERT INTO programacion(fecha,cant_equipos,gestion) VALUES(@fec,@cant,@gest)");
+                SqlCommand add = new SqlCommand("INSERT INTO programacion(fecha,cant_equipos,gestion,estado) VALUES(@fec,@cant,@gest,1)");
                 add.Connection = con.Conectarbd;
 
                 add.Parameters.AddWithValue("@fec", Convert.ToDateTime(Fecha_ingreso));
                 add.Parameters.AddWithValue("@cant", Convert.ToInt32(Cantidad));
                 add.Parameters.AddWithValue("@gest", Convert.ToString(Gestion));
-
+                add.Parameters.AddWithValue("@idu", Convert.ToString(Gestion));
                 add.ExecuteNonQuery();
 
                 mss = "OK";
             }
             catch (Exception e) { return e.ToString(); }
-
+            con.cerrar();
 
             return mss;
         }
 
+        public int lastId() {
+
+            int n = 666;
+
+            con.abrir();
+            try
+            {
+                //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
+                String cad = "SELECT TOP 1 (id_programacion) AS lastId FROM programacion ORDER BY id_programacion DESC;";
+
+                SqlCommand comd = new SqlCommand(cad);
+                comd.Connection = con.Conectarbd;
+
+                SqlDataReader d = comd.ExecuteReader();
+
+                if (d.Read())
+                {
+                    n = Int32.Parse(d["lastId"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return n;
+            }
+            finally
+            {
+                if (con.Conectarbd.State == ConnectionState.Open) con.Conectarbd.Close();
+            }
+
+
+            return n;
+        }
     }
 }

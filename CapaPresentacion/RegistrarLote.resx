@@ -57,6 +57,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="id.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <metadata name="fecha.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
@@ -73,7 +76,7 @@
   <data name="btnEliminarL.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAzCAYAAADVY1sUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAC7pJREFUaEO9mQXIVc0WhgX5bcVG7G6xu7u7EAMVu7FAxcJWFFGxu0FRLOzGTuzu
+        wQAADsEBuJFr7QAAC7pJREFUaEO9mQXIVc0WhgX5bcVG7G6xu7u7EAMVu7FAxcJWFFGxu0FRLOzGTuzu
         7m6d/z4L3s3+zj3xqZe7YJ2ZPXvNilkxM/vE+PXrlwvEnz9/en1ArR/0PhQK/H0gkE7olxkMI0EMfiD8
         8eOHDdCCMFb/+/fvUZ4jAbQgIF5+pcRLfcmn/VMwQ6QcjD59+mR9Cfj27ZsniL4EhkMMBwHNgZ8M8PeF
         zPsbMEMQCjP1JQTmGPbq1Sv38OFD9/TpU2sfPHhg/VD4+PFj9+TJE6N79uyZzZfyoOTR98v8G/BCC0Zq
