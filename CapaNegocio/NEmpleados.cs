@@ -11,7 +11,7 @@ namespace CapaNegocio
         //Metodo insertar que llama al método Insertar de la clase DEmpleados de la capaDatos
         
         public static string Insertar(string nombre, string apellido, string telefono,
-            string direccion, string dui, string nit, int id_cargo, int estado)
+            string direccion, string dui, string nit, int id_cargo, int estado, int iddepa)
         {
             DEmpleados Obj = new DEmpleados();
 
@@ -23,6 +23,7 @@ namespace CapaNegocio
             Obj.Nit = nit;
             Obj.Id_cargo = id_cargo;
             Obj.Estado = estado;
+            Obj.Iddepartamento = iddepa;
             
 
             return Obj.Insertar(Obj);
@@ -33,7 +34,7 @@ namespace CapaNegocio
         //De la CapaDatos
 
         public static string Editar(int idempleado, string nombre, string apellido, string telefono,
-            string direccion, string dui, string nit, int id_cargo, int estado)
+            string direccion, string dui, string nit, int id_cargo, int estado, int iddepa)
         {
 
             DEmpleados Obj = new DEmpleados();
@@ -46,7 +47,7 @@ namespace CapaNegocio
             Obj.Nit = nit;
             Obj.Id_cargo = id_cargo;
             Obj.Estado = estado;
-            
+            Obj.Iddepartamento = iddepa;
 
             return Obj.Editar(Obj);
 
@@ -82,6 +83,21 @@ namespace CapaNegocio
 
             return Obj.BuscarNombre(Obj);
 
+        }
+
+        public static DataTable BuscarNombreG(string textobuscar)
+        {
+            DEmpleados Obj = new DEmpleados();
+            Obj.TextoBuscar = textobuscar;
+
+            return Obj.BuscarNombreG(Obj);
+
+        }
+
+
+        public static DataTable MostrarConDt()
+        {
+            return new DEmpleados().MostrarConDt();
         }
 
 

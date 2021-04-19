@@ -112,7 +112,7 @@ namespace CapaDatos
 
                 SqlParameter ParPrecio = new SqlParameter();
                 ParPrecio.ParameterName = "@precio";
-                ParPrecio.SqlDbType = SqlDbType.Money;
+                ParPrecio.SqlDbType = SqlDbType.Decimal;
                 ParPrecio.Value = Equipos.Precio;
                 sqlCmd.Parameters.Add(ParPrecio);
 
@@ -226,7 +226,7 @@ namespace CapaDatos
 
                 SqlParameter ParPrecio = new SqlParameter();
                 ParPrecio.ParameterName = "@precio";
-                ParPrecio.SqlDbType = SqlDbType.Money;
+                ParPrecio.SqlDbType = SqlDbType.Decimal;
                 ParPrecio.Value = Equipos.Precio;
                 sqlCmd.Parameters.Add(ParPrecio);
 
@@ -389,6 +389,61 @@ namespace CapaDatos
             return DtResultado;
 
         }
+
+        //Metodo para mostrar todos los registros de la tabla 
+        public DataTable Mostrar2()
+        {
+            DataTable DtResultado = new DataTable("equipos");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spllenado_equipo";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        //Metodo para mostrar todos los registros de la tabla 
+        public DataTable LlenarCmbTipo()
+        {
+            DataTable DtResultado = new DataTable("equipos");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spequipo_tipo";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
 
 
 

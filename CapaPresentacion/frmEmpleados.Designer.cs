@@ -68,6 +68,8 @@ namespace CapaPresentacion
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbdepartamento = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -92,7 +94,7 @@ namespace CapaPresentacion
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1056, 509);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
@@ -100,6 +102,8 @@ namespace CapaPresentacion
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbdepartamento);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cbidcargo);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtEstado);
@@ -245,7 +249,7 @@ namespace CapaPresentacion
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(507, 333);
+            this.btnCancelar.Location = new System.Drawing.Point(446, 386);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 29);
             this.btnCancelar.TabIndex = 9;
@@ -255,7 +259,7 @@ namespace CapaPresentacion
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(378, 333);
+            this.btnEditar.Location = new System.Drawing.Point(346, 386);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(94, 29);
             this.btnEditar.TabIndex = 8;
@@ -265,7 +269,7 @@ namespace CapaPresentacion
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(243, 333);
+            this.btnGuardar.Location = new System.Drawing.Point(234, 386);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(94, 29);
             this.btnGuardar.TabIndex = 7;
@@ -275,7 +279,7 @@ namespace CapaPresentacion
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(118, 333);
+            this.btnNuevo.Location = new System.Drawing.Point(118, 386);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 29);
             this.btnNuevo.TabIndex = 6;
@@ -452,7 +456,7 @@ namespace CapaPresentacion
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1056, 509);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
@@ -473,6 +477,24 @@ namespace CapaPresentacion
             this.tabControl1.Size = new System.Drawing.Size(1064, 542);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(450, 311);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Departamento:";
+            // 
+            // cbdepartamento
+            // 
+            this.cbdepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbdepartamento.FormattingEnabled = true;
+            this.cbdepartamento.Location = new System.Drawing.Point(575, 303);
+            this.cbdepartamento.Name = "cbdepartamento";
+            this.cbdepartamento.Size = new System.Drawing.Size(284, 28);
+            this.cbdepartamento.TabIndex = 23;
             // 
             // frmEmpleados
             // 
@@ -537,5 +559,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtDui;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbidcargo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbdepartamento;
     }
 }

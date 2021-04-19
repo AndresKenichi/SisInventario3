@@ -132,6 +132,8 @@ namespace Loggin
             cbMarca.DisplayMember = "marca";
         }
 
+       
+
 
 
         private void Equipos_Load(object sender, EventArgs e)

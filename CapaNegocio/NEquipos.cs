@@ -75,6 +75,16 @@ namespace CapaNegocio
             return new DEquipos().Mostrar();
         }
 
+        public static DataTable Mostrar2()
+        {
+            return new DEquipos().Mostrar2();
+        }
+
+        public static DataTable LlenarCmbTipo()
+        {
+            return new DEquipos().LlenarCmbTipo();
+        }
+
         //Método BuscarNombre que llama al método BuscarNombre
         //de la clase DEmpleados de la CapaDatos
 

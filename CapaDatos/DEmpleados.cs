@@ -18,6 +18,8 @@ namespace CapaDatos
         private string _Nit;
         private int _Id_cargo;
         private int _Estado;
+        private int _Iddepartamento;
+
         private string _TextoBuscar;
 
 
@@ -31,6 +33,7 @@ namespace CapaDatos
         public int Id_cargo { get => _Id_cargo; set => _Id_cargo = value; }
         public int Estado { get => _Estado; set => _Estado = value; }
         public string TextoBuscar { get => _TextoBuscar; set => _TextoBuscar = value; }
+        public int Iddepartamento { get => _Iddepartamento; set => _Iddepartamento = value; }
 
         //Constructores
         public DEmpleados()
@@ -39,7 +42,7 @@ namespace CapaDatos
         }
 
         public DEmpleados(int idempleado, string nombre, string apellido, string telefono,
-            string direccion, string dui, string nit, int id_cargo, int estado, string textobuscar)
+            string direccion, string dui, string nit, int id_cargo, int estado, string textobuscar, int iddepartamento)
         {
             this.Idempleado = idempleado;
             this.Nombre = nombre;
@@ -51,6 +54,7 @@ namespace CapaDatos
             this.Id_cargo = id_cargo;
             this.Estado = estado;
             this.TextoBuscar = textobuscar;
+            this.Iddepartamento = iddepartamento;
 
 
         }
@@ -135,6 +139,12 @@ namespace CapaDatos
                 ParEstado.SqlDbType = SqlDbType.Int;
                 ParEstado.Value = Empleados.Estado;
                 sqlCmd.Parameters.Add(ParEstado);
+
+                SqlParameter ParIdDepa = new SqlParameter();
+                ParIdDepa.ParameterName = "id_departamento";
+                ParIdDepa.SqlDbType = SqlDbType.Int;
+                ParIdDepa.Value = Empleados.Iddepartamento;
+                sqlCmd.Parameters.Add(ParIdDepa);
 
                 //Ejecutamos nuestro Comando
 
@@ -236,6 +246,12 @@ namespace CapaDatos
                 ParEstado.SqlDbType = SqlDbType.Int;
                 ParEstado.Value = Empleados.Estado;
                 sqlCmd.Parameters.Add(ParEstado);
+
+                SqlParameter ParIdDepa = new SqlParameter();
+                ParIdDepa.ParameterName = "id_departamento";
+                ParIdDepa.SqlDbType = SqlDbType.Int;
+                ParIdDepa.Value = Empleados.Iddepartamento;
+                sqlCmd.Parameters.Add(ParIdDepa);
 
 
                 //Ejecutamos nuestro Comando
@@ -364,7 +380,66 @@ namespace CapaDatos
 
         }
 
+        //Metodo para mostrar todos los registros de la tabla c
+        public DataTable MostrarConDt()
+        {
+            DataTable DtResultado = new DataTable("empleados");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spllenar_MostEmpleado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
 
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
+        //Metodo para Buscar para la gestion
+        public DataTable BuscarNombreG(DEmpleados Empleados)
+        {
+            DataTable DtResultado = new DataTable("empleados");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "sp_BuscarEmpleado";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter ParTextoBuscar = new SqlParameter();
+                ParTextoBuscar.ParameterName = "@textobuscar";
+                ParTextoBuscar.SqlDbType = SqlDbType.VarChar;
+                ParTextoBuscar.Size = 50;
+                ParTextoBuscar.Value = Empleados.TextoBuscar;
+                SqlCmd.Parameters.Add(ParTextoBuscar);
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
 
 
 

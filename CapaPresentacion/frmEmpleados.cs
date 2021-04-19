@@ -20,7 +20,7 @@ namespace CapaPresentacion
             this.ttMensaje.SetToolTip(this.cbidcargo, "Seleccione un cargo");
 
             this.LlenarComboPresentacion();
-
+            this.LlenarComboDepa();
         }
 
 
@@ -126,6 +126,15 @@ namespace CapaPresentacion
         }
 
 
+        //Metodo para llenar el comboBox presentacion
+        private void LlenarComboDepa()
+        {
+            cbdepartamento.DataSource = NDepartamentos.Mostrar();
+            cbdepartamento.ValueMember = "id_departamento";
+            cbdepartamento.DisplayMember = "departamento";
+        }
+
+
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             this.Top = 0;
@@ -180,12 +189,12 @@ namespace CapaPresentacion
                     if (this.IsNuevo)
                     {
                         rpta = NEmpleados.Insertar(this.txtNombre.Text.Trim().ToUpper(), this.txtApellido.Text.ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(),
-                            this.txtDui.Text.Trim().ToUpper(),this.txtNit.Text.Trim().ToUpper(), Convert.ToInt32(this.cbidcargo.SelectedValue) , Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()));
+                            this.txtDui.Text.Trim().ToUpper(),this.txtNit.Text.Trim().ToUpper(), Convert.ToInt32(this.cbidcargo.SelectedValue) , Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), Convert.ToInt32(this.cbdepartamento.SelectedValue));
                     }
                     else
                     {
                         rpta = NEmpleados.Editar(Convert.ToInt32(this.txtIdempleado.Text),this.txtNombre.Text.Trim().ToUpper(), this.txtApellido.Text.ToUpper(), this.txtTelefono.Text.Trim().ToUpper(), this.txtDireccion.Text.Trim().ToUpper(),
-                            this.txtDui.Text.Trim().ToUpper(), this.txtNit.Text.Trim().ToUpper(), Convert.ToInt32(this.cbidcargo.SelectedValue), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()));
+                            this.txtDui.Text.Trim().ToUpper(), this.txtNit.Text.Trim().ToUpper(), Convert.ToInt32(this.cbidcargo.SelectedValue), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), Convert.ToInt32(this.cbdepartamento.SelectedValue));
                     }
                 }
                 if (rpta.Equals("OK"))
