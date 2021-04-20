@@ -15,7 +15,16 @@ namespace CapaPresentacion
         public frmLogin()
         {
             InitializeComponent();
+            this.ttMensaje.SetToolTip(this.txtCorreo, "Ingrese un Correo");
+            this.ttMensaje.SetToolTip(this.txtClave, "Ingrese una Clave");
         }
+
+        private void MensajeError(String mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -34,17 +43,36 @@ namespace CapaPresentacion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            DataTable Datos = CapaNegocio.NUsuarios.Login(this.txtCorreo.Text, this.txtClave.Text);
+
             //Evaluar si existe el Usuario
-            if (Datos.Rows.Count==0)
-            {
-                MessageBox.Show("No tiene Acceso al Sistema","Sistema de Ventas",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            if (this.txtCorreo.Text == string.Empty || txtClave.Text == string.Empty)
+            { 
+           
+                if (this.txtCorreo.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                    errorIcono.SetError(txtCorreo, "Ingrese un Correo");
+                }
+
+                if (this.txtClave.Text == string.Empty)
+                {
+                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                    errorIcono.SetError(txtClave, "Ingrese una Clave");
+                }
             }
             else
-            {
-                Inicio frm = new Inicio();
-                frm.Show();
-                this.Hide();
+            { 
+                DataTable Datos = CapaNegocio.NUsuarios.Login(this.txtCorreo.Text, this.txtClave.Text);
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("No tiene Acceso al Sistema", "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Inicio frm = new Inicio();
+                    frm.Show();
+                    this.Hide();
+                }
             }
 
         }

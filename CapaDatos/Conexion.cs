@@ -8,8 +8,8 @@ namespace CapaDatos
     class Conexion
     {
         //public static string Cn = @"Data Source=KEVIN; Initial Catalog=inventario; Integrated Security=true";
-        //public static string Cn = @"Data Source=DESKTOP-T3VRL82\SQLEXPRESS; Initial Catalog=inventario; Integrated Security=true";
-        public static string Cn = @"Data Source=DESKTOP-I39N25J\JOSHEP; Initial Catalog=inventario2; Integrated Security=true";
+        public static string Cn = @"Data Source=DESKTOP-T3VRL82\SQLEXPRESS; Initial Catalog=inventario; Integrated Security=true";
+        //public static string Cn = @"Data Source=DESKTOP-I39N25J\JOSHEP; Initial Catalog=inventario2; Integrated Security=true";
         public SqlConnection Conectarbd = new SqlConnection();
 
         //Constructor
