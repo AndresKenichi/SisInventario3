@@ -29,192 +29,283 @@ namespace Loggin
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMatch = new System.Windows.Forms.Button();
-            this.cbdepartamento = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbtipo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabAsignar = new System.Windows.Forms.TabPage();
             this.dtequipos = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chkSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtEmpleados = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chkAdd = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lbEquipo = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbNombreE = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbdepartamento = new System.Windows.Forms.ComboBox();
+            this.cbtipo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnMatch = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
+            this.tabAsignar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtequipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnMatch
+            // tabControl1
             // 
-            this.btnMatch.Location = new System.Drawing.Point(579, 217);
-            this.btnMatch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMatch.Name = "btnMatch";
-            this.btnMatch.Size = new System.Drawing.Size(46, 49);
-            this.btnMatch.TabIndex = 2;
-            this.btnMatch.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.tabAsignar);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(3, 8);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1053, 523);
+            this.tabControl1.TabIndex = 13;
             // 
-            // cbdepartamento
+            // tabAsignar
             // 
-            this.cbdepartamento.FormattingEnabled = true;
-            this.cbdepartamento.Location = new System.Drawing.Point(335, 76);
-            this.cbdepartamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbdepartamento.Name = "cbdepartamento";
-            this.cbdepartamento.Size = new System.Drawing.Size(235, 28);
-            this.cbdepartamento.TabIndex = 3;
+            this.tabAsignar.Controls.Add(this.dtequipos);
+            this.tabAsignar.Controls.Add(this.dtEmpleados);
+            this.tabAsignar.Controls.Add(this.lbEquipo);
+            this.tabAsignar.Controls.Add(this.label6);
+            this.tabAsignar.Controls.Add(this.lbNombreE);
+            this.tabAsignar.Controls.Add(this.label5);
+            this.tabAsignar.Controls.Add(this.label2);
+            this.tabAsignar.Controls.Add(this.label3);
+            this.tabAsignar.Controls.Add(this.checkBox1);
+            this.tabAsignar.Controls.Add(this.cbdepartamento);
+            this.tabAsignar.Controls.Add(this.cbtipo);
+            this.tabAsignar.Controls.Add(this.label4);
+            this.tabAsignar.Controls.Add(this.label1);
+            this.tabAsignar.Controls.Add(this.txtBuscar);
+            this.tabAsignar.Controls.Add(this.btnMatch);
+            this.tabAsignar.Location = new System.Drawing.Point(4, 24);
+            this.tabAsignar.Name = "tabAsignar";
+            this.tabAsignar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAsignar.Size = new System.Drawing.Size(1045, 495);
+            this.tabAsignar.TabIndex = 1;
+            this.tabAsignar.Text = "Asignar Equipo";
+            this.tabAsignar.UseVisualStyleBackColor = true;
+            this.tabAsignar.Click += new System.EventHandler(this.tabAsignar_Click);
             // 
-            // checkBox1
+            // dtequipos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(311, 76);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.dtequipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtequipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkSel});
+            this.dtequipos.Location = new System.Drawing.Point(544, 82);
+            this.dtequipos.Name = "dtequipos";
+            this.dtequipos.RowTemplate.Height = 25;
+            this.dtequipos.Size = new System.Drawing.Size(477, 218);
+            this.dtequipos.TabIndex = 29;
+            this.dtequipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtequipos_CellContentClick);
+            this.dtequipos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtequipos_CellValueChanged);
             // 
-            // txtBuscar
+            // chkSel
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(38, 76);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(203, 27);
-            this.txtBuscar.TabIndex = 5;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.chkSel.HeaderText = " ";
+            this.chkSel.Name = "chkSel";
+            this.chkSel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.chkSel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.chkSel.Width = 30;
             // 
-            // label1
+            // dtEmpleados
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nombre";
+            this.dtEmpleados.AllowUserToDeleteRows = false;
+            this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkAdd});
+            this.dtEmpleados.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtEmpleados.Location = new System.Drawing.Point(24, 82);
+            this.dtEmpleados.MultiSelect = false;
+            this.dtEmpleados.Name = "dtEmpleados";
+            this.dtEmpleados.RowTemplate.Height = 25;
+            this.dtEmpleados.Size = new System.Drawing.Size(453, 218);
+            this.dtEmpleados.TabIndex = 28;
+            this.dtEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEmpleados_CellContentClick);
+            this.dtEmpleados.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEmpleados_CellValueChanged);
+            // 
+            // chkAdd
+            // 
+            this.chkAdd.FillWeight = 20F;
+            this.chkAdd.HeaderText = " ";
+            this.chkAdd.Name = "chkAdd";
+            this.chkAdd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chkAdd.Width = 30;
+            // 
+            // lbEquipo
+            // 
+            this.lbEquipo.AutoSize = true;
+            this.lbEquipo.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbEquipo.Location = new System.Drawing.Point(683, 343);
+            this.lbEquipo.Name = "lbEquipo";
+            this.lbEquipo.Size = new System.Drawing.Size(13, 17);
+            this.lbEquipo.TabIndex = 27;
+            this.lbEquipo.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(578, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 15);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Equipo a Asignar:";
+            // 
+            // lbNombreE
+            // 
+            this.lbNombreE.AutoSize = true;
+            this.lbNombreE.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbNombreE.Location = new System.Drawing.Point(354, 343);
+            this.lbNombreE.Name = "lbNombreE";
+            this.lbNombreE.Size = new System.Drawing.Size(15, 19);
+            this.lbNombreE.TabIndex = 25;
+            this.lbNombreE.Text = "-";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(222, 347);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 15);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Nombre del Empleado";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(335, 53);
+            this.label2.Location = new System.Drawing.Point(292, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
-            this.label2.TabIndex = 7;
+            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.TabIndex = 18;
             this.label2.Text = "Departamento";
-            // 
-            // cbtipo
-            // 
-            this.cbtipo.FormattingEnabled = true;
-            this.cbtipo.Location = new System.Drawing.Point(673, 71);
-            this.cbtipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbtipo.Name = "cbtipo";
-            this.cbtipo.Size = new System.Drawing.Size(235, 28);
-            this.cbtipo.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(632, 75);
+            this.label3.Location = new System.Drawing.Point(544, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 9;
+            this.label3.Size = new System.Drawing.Size(30, 15);
+            this.label3.TabIndex = 20;
             this.label3.Text = "Tipo";
             // 
-            // dtequipos
+            // checkBox1
             // 
-            this.dtequipos.AllowUserToAddRows = false;
-            this.dtequipos.AllowUserToDeleteRows = false;
-            this.dtequipos.AllowUserToOrderColumns = true;
-            this.dtequipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtequipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dtequipos.Location = new System.Drawing.Point(632, 115);
-            this.dtequipos.MultiSelect = false;
-            this.dtequipos.Name = "dtequipos";
-            this.dtequipos.ReadOnly = true;
-            this.dtequipos.RowHeadersWidth = 51;
-            this.dtequipos.RowTemplate.Height = 29;
-            this.dtequipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtequipos.Size = new System.Drawing.Size(518, 291);
-            this.dtequipos.TabIndex = 10;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(271, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // Eliminar
+            // cbdepartamento
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 125;
+            this.cbdepartamento.FormattingEnabled = true;
+            this.cbdepartamento.Location = new System.Drawing.Point(271, 43);
+            this.cbdepartamento.Name = "cbdepartamento";
+            this.cbdepartamento.Size = new System.Drawing.Size(206, 23);
+            this.cbdepartamento.TabIndex = 14;
             // 
-            // dtEmpleados
+            // cbtipo
             // 
-            this.dtEmpleados.AllowUserToAddRows = false;
-            this.dtEmpleados.AllowUserToDeleteRows = false;
-            this.dtEmpleados.AllowUserToOrderColumns = true;
-            this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1});
-            this.dtEmpleados.Location = new System.Drawing.Point(38, 115);
-            this.dtEmpleados.MultiSelect = false;
-            this.dtEmpleados.Name = "dtEmpleados";
-            this.dtEmpleados.ReadOnly = true;
-            this.dtEmpleados.RowHeadersWidth = 51;
-            this.dtEmpleados.RowTemplate.Height = 29;
-            this.dtEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtEmpleados.Size = new System.Drawing.Size(518, 291);
-            this.dtEmpleados.TabIndex = 11;
+            this.cbtipo.FormattingEnabled = true;
+            this.cbtipo.Location = new System.Drawing.Point(544, 43);
+            this.cbtipo.Name = "cbtipo";
+            this.cbtipo.Size = new System.Drawing.Size(206, 23);
+            this.cbtipo.TabIndex = 19;
             // 
-            // dataGridViewCheckBoxColumn1
+            // label4
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(394, 314);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(210, 17);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "DATOS DEL MOVIMIENTO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Nombre";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(24, 43);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(178, 23);
+            this.txtBuscar.TabIndex = 16;
+            // 
+            // btnMatch
+            // 
+            this.btnMatch.Location = new System.Drawing.Point(483, 164);
+            this.btnMatch.Name = "btnMatch";
+            this.btnMatch.Size = new System.Drawing.Size(55, 50);
+            this.btnMatch.TabIndex = 13;
+            this.btnMatch.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1045, 495);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // GestionEquipos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1198, 724);
+            this.ClientSize = new System.Drawing.Size(1048, 713);
             this.ControlBox = false;
-            this.Controls.Add(this.dtEmpleados);
-            this.Controls.Add(this.dtequipos);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbtipo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.cbdepartamento);
-            this.Controls.Add(this.btnMatch);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GestionEquipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "d";
             this.Load += new System.EventHandler(this.GestionEquipos_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabAsignar.ResumeLayout(false);
+            this.tabAsignar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtequipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleados)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnMatch;
-        private System.Windows.Forms.ComboBox cbdepartamento;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabAsignar;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbtipo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dtequipos;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cbdepartamento;
+        private System.Windows.Forms.ComboBox cbtipo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnMatch;
+        private System.Windows.Forms.Label lbEquipo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbNombreE;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dtEmpleados;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkAdd;
+        private System.Windows.Forms.DataGridView dtequipos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkSel;
     }
 }

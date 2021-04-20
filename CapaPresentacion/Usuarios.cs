@@ -113,7 +113,7 @@ namespace Loggin
             else if (ModificarPressed == true)
             {
 
-                accept = objU.Modificar(Int32.Parse(this.txtCodigoUs.Text), this.txtCorreoUs.Text.Trim(), this.txtClaveUs.Text, (this.cbTipoUs.SelectedIndex + 1));
+                accept = objU.Modificar(Int32.Parse(this.txtCodigoUs.Text), this.txtCorreoUs.Text.Trim(), this.txtClaveUs.Text, (this.cbTipoUs.SelectedIndex));
 
                 if (accept == "MODIFICADO")
                 {
@@ -123,6 +123,8 @@ namespace Loggin
                     EnabledPrincipalButtons(false, true, true);
                     txtCodigoUs.Text = string.Empty;
                     ClearText();
+                    lbCargoUs.Text = "";
+                    lbNombreUs.Text = "";
                 }
                 else
                 {
@@ -246,6 +248,7 @@ namespace Loggin
 
                 mami();
                 HideItems();
+                userCred.Clear();
                 EnabledPrincipalButtons(false, false, false);
             }
             
@@ -285,7 +288,8 @@ namespace Loggin
             {
                 txtCorreoUs.Text = userCred[0].ToString();
                 txtClaveUs.Text = userCred[1].ToString();
-                cbTipoUs.SelectedIndex = (Int32.Parse(userCred[2].ToString()) - 1);
+                lbCargoUs.Text = userCred[2].ToString();
+                cbTipoUs.SelectedIndex= Convert.ToInt32(userCred[2].ToString())-3;
             }
 
         }

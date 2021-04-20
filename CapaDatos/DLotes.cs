@@ -92,6 +92,8 @@ namespace CapaDatos
 
 
             return n;
+
+            n = 0;
         }
 
 
