@@ -29,8 +29,10 @@ namespace Loggin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAsignar = new System.Windows.Forms.TabPage();
+            this.btnAsignar = new System.Windows.Forms.Button();
             this.dtequipos = new System.Windows.Forms.DataGridView();
             this.chkSel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtEmpleados = new System.Windows.Forms.DataGridView();
@@ -49,10 +51,14 @@ namespace Loggin
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnMatch = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAsignar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtequipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -67,6 +73,9 @@ namespace Loggin
             // 
             // tabAsignar
             // 
+            this.tabAsignar.Controls.Add(this.label7);
+            this.tabAsignar.Controls.Add(this.txtDescripcion);
+            this.tabAsignar.Controls.Add(this.btnAsignar);
             this.tabAsignar.Controls.Add(this.dtequipos);
             this.tabAsignar.Controls.Add(this.dtEmpleados);
             this.tabAsignar.Controls.Add(this.lbEquipo);
@@ -90,6 +99,17 @@ namespace Loggin
             this.tabAsignar.Text = "Asignar Equipo";
             this.tabAsignar.UseVisualStyleBackColor = true;
             this.tabAsignar.Click += new System.EventHandler(this.tabAsignar_Click);
+            // 
+            // btnAsignar
+            // 
+            this.btnAsignar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAsignar.Location = new System.Drawing.Point(742, 386);
+            this.btnAsignar.Name = "btnAsignar";
+            this.btnAsignar.Size = new System.Drawing.Size(114, 40);
+            this.btnAsignar.TabIndex = 30;
+            this.btnAsignar.Text = "ASIGNAR";
+            this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // dtequipos
             // 
@@ -140,7 +160,7 @@ namespace Loggin
             // 
             this.lbEquipo.AutoSize = true;
             this.lbEquipo.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbEquipo.Location = new System.Drawing.Point(683, 343);
+            this.lbEquipo.Location = new System.Drawing.Point(239, 409);
             this.lbEquipo.Name = "lbEquipo";
             this.lbEquipo.Size = new System.Drawing.Size(13, 17);
             this.lbEquipo.TabIndex = 27;
@@ -149,7 +169,7 @@ namespace Loggin
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(578, 347);
+            this.label6.Location = new System.Drawing.Point(105, 411);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 15);
             this.label6.TabIndex = 26;
@@ -159,7 +179,7 @@ namespace Loggin
             // 
             this.lbNombreE.AutoSize = true;
             this.lbNombreE.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbNombreE.Location = new System.Drawing.Point(354, 343);
+            this.lbNombreE.Location = new System.Drawing.Point(237, 361);
             this.lbNombreE.Name = "lbNombreE";
             this.lbNombreE.Size = new System.Drawing.Size(15, 19);
             this.lbNombreE.TabIndex = 25;
@@ -168,7 +188,7 @@ namespace Loggin
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 347);
+            this.label5.Location = new System.Drawing.Point(105, 365);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 15);
             this.label5.TabIndex = 24;
@@ -261,13 +281,34 @@ namespace Loggin
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(471, 381);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(235, 71);
+            this.txtDescripcion.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(471, 360);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 15);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Descripcion";
+            // 
             // GestionEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1048, 713);
+            this.ClientSize = new System.Drawing.Size(1048, 747);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -282,6 +323,7 @@ namespace Loggin
             this.tabAsignar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtequipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,5 +349,9 @@ namespace Loggin
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkAdd;
         private System.Windows.Forms.DataGridView dtequipos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkSel;
+        private System.Windows.Forms.Button btnAsignar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

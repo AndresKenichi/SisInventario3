@@ -11,6 +11,9 @@ namespace Loggin
 {
     public partial class GestionEquipos : Form
     {
+        public bool a=true, b=false;
+        public string var_pase1 = "",var_pase2="";
+        public NGestionEquipos ge = new NGestionEquipos();
         public GestionEquipos()
         {
             InitializeComponent();
@@ -56,6 +59,7 @@ namespace Loggin
             cbdepartamento.DataSource = NDepartamentos.Mostrar();
             cbdepartamento.ValueMember = "id_departamento";
             cbdepartamento.DisplayMember = "departamento";
+            
         }
 
         private void GestionEquipos_Load(object sender, EventArgs e)
@@ -91,14 +95,9 @@ namespace Loggin
                 {
                     n = cellSelecion.RowIndex;
 
-                    /*string mensaje = string.Format("Evento CellValueChanged.\n\nSe ha seccionado, \nId Empleado: '{0}', \nNombre: '{1}', \nCargo: '{2}''",
-                                                        row.Cells[1].Value,
-                                                        row.Cells[2].Value,
-                                                        row.Cells[3].Value);
-
-                    MessageBox.Show(mensaje, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    */
+                    var_pase1 = row.Cells[1].Value.ToString();
                     lbNombreE.Text = (row.Cells[2].Value.ToString());
+                    a = true;
                 }
                 else {
 
@@ -106,6 +105,8 @@ namespace Loggin
                     if (n == cellSelecion.RowIndex) {
 
                         lbNombreE.Text = "";
+                        var_pase1 = "";
+                        a = false;
                     }
                     
                 }
@@ -148,15 +149,10 @@ namespace Loggin
                 {
                     n = cellSelecion.RowIndex;
 
-                    /*string mensaje = string.Format("Evento CellValueChanged.\n\nSe ha seccionado, \nId Empleado: '{0}', \nNombre: '{1}', \nCargo: '{2}''",
-                                                        row.Cells[1].Value,
-                                                        row.Cells[2].Value,
-                                                        row.Cells[3].Value);*/
-
+                    var_pase2 = row.Cells[1].Value.ToString();
                     lbEquipo.Text = (row.Cells[2].Value.ToString());
-
-                    //MessageBox.Show(mensaje, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    b = true;
+                   
                 }
                 else
                 {
@@ -164,12 +160,27 @@ namespace Loggin
                     n = cellSelecion.RowIndex;
                     if (n == cellSelecion.RowIndex)
                     {
-
+                        var_pase2 = "";
+                        b = false;
                         lbEquipo.Text = "";
                     }
 
                 }
 
+            }
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            if (a == true && b == true)
+            {
+                errorProvider1.SetError(cbdepartamento, "");
+                
+                //MessageBox.Show(" ,id_equipo=" + var_pase2+ "OK  id_empleado=" + var_pase1+", Encabezado= 1, Descripcion= sdasdada , Departamento "+cbdepartamento.SelectedValue +", Fecha Asignacion:"+DateTime.Now+"IdUsuario="+1+", Estado= "+1);
+                MessageBox.Show(ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 1, "ASIGNACION DE EQUIPO A EMPLEADO", Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1));
+            }
+            else {
+                errorProvider1.SetError(cbdepartamento,"SELECCIONE DATOS DE LAS TABLAS");
             }
         }
     }
