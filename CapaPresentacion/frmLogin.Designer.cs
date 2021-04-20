@@ -39,6 +39,9 @@ namespace CapaPresentacion
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LblHora = new System.Windows.Forms.Label();
+            this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,6 +123,14 @@ namespace CapaPresentacion
             this.LblHora.TabIndex = 7;
             this.LblHora.Text = "label4";
             // 
+            // ttMensaje
+            // 
+            this.ttMensaje.IsBalloon = true;
+            // 
+            // errorIcono
+            // 
+            this.errorIcono.ContainerControl = this;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -139,6 +150,7 @@ namespace CapaPresentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +167,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label LblHora;
+        private System.Windows.Forms.ToolTip ttMensaje;
+        private System.Windows.Forms.ErrorProvider errorIcono;
     }
 }
