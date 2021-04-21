@@ -95,5 +95,11 @@ namespace CapaNegocio
             return Obj.BuscarNombre(Obj);
 
         }
+
+        public void createPDF()
+        {
+            DEquipos Obj = new DEquipos();
+            Obj.createPDF();
+        }
     }
 }

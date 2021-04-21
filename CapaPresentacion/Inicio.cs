@@ -99,12 +99,28 @@ namespace Loggin
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            frmLogin frmObj = new frmLogin();
+            frmObj.Show();
+            this.Hide();
+
+        }
+
+        private void AcercaDeM_Click(object sender, EventArgs e)
+        {
+            AcercaDe gse = new AcercaDe();
+
+
+            openChildForm(gse);
         }
     }
 }

@@ -48,54 +48,60 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(293, 19);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(256, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 41);
+            this.label1.Size = new System.Drawing.Size(238, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema Inventarios";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(218, 110);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(191, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Correo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(218, 172);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(188, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 23);
+            this.label3.Size = new System.Drawing.Size(84, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password:";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(318, 106);
+            this.txtCorreo.Location = new System.Drawing.Point(278, 80);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(388, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(340, 23);
             this.txtCorreo.TabIndex = 3;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(318, 175);
+            this.txtClave.Location = new System.Drawing.Point(278, 131);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(388, 27);
+            this.txtClave.Size = new System.Drawing.Size(340, 23);
             this.txtClave.TabIndex = 4;
             // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.White;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(318, 223);
+            this.btnIngresar.Location = new System.Drawing.Point(278, 167);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(130, 38);
+            this.btnIngresar.Size = new System.Drawing.Size(114, 28);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -105,9 +111,10 @@ namespace CapaPresentacion
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalir.Location = new System.Drawing.Point(493, 223);
+            this.btnSalir.Location = new System.Drawing.Point(431, 167);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(130, 38);
+            this.btnSalir.Size = new System.Drawing.Size(114, 28);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -123,9 +130,10 @@ namespace CapaPresentacion
             // 
             this.LblHora.AutoSize = true;
             this.LblHora.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.LblHora.Location = new System.Drawing.Point(647, 71);
+            this.LblHora.ForeColor = System.Drawing.Color.White;
+            this.LblHora.Location = new System.Drawing.Point(566, 53);
             this.LblHora.Name = "LblHora";
-            this.LblHora.Size = new System.Drawing.Size(51, 20);
+            this.LblHora.Size = new System.Drawing.Size(40, 15);
             this.LblHora.TabIndex = 7;
             this.LblHora.Text = "label4";
             // 
@@ -139,10 +147,10 @@ namespace CapaPresentacion
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(922, 328);
+            this.ClientSize = new System.Drawing.Size(807, 246);
             this.Controls.Add(this.LblHora);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
@@ -152,6 +160,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

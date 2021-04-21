@@ -30,6 +30,9 @@ namespace Loggin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.ttMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -93,14 +96,14 @@ namespace Loggin
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 125;
             // 
             // chkEliminar
             // 
             this.chkEliminar.AutoSize = true;
-            this.chkEliminar.Location = new System.Drawing.Point(21, 91);
+            this.chkEliminar.Location = new System.Drawing.Point(18, 68);
+            this.chkEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkEliminar.Name = "chkEliminar";
-            this.chkEliminar.Size = new System.Drawing.Size(85, 24);
+            this.chkEliminar.Size = new System.Drawing.Size(69, 19);
             this.chkEliminar.TabIndex = 5;
             this.chkEliminar.Text = "Eliminar";
             this.chkEliminar.UseVisualStyleBackColor = true;
@@ -108,15 +111,18 @@ namespace Loggin
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImprimir.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnImprimir.Location = new System.Drawing.Point(761, 27);
+            this.btnImprimir.Location = new System.Drawing.Point(666, 20);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(139, 37);
+            this.btnImprimir.Size = new System.Drawing.Size(122, 28);
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // cbTipoE
             // 
@@ -125,27 +131,29 @@ namespace Loggin
             this.cbTipoE.Items.AddRange(new object[] {
             "Laptops",
             "Tablet"});
-            this.cbTipoE.Location = new System.Drawing.Point(606, 171);
+            this.cbTipoE.Location = new System.Drawing.Point(530, 128);
+            this.cbTipoE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTipoE.Name = "cbTipoE";
-            this.cbTipoE.Size = new System.Drawing.Size(284, 28);
+            this.cbTipoE.Size = new System.Drawing.Size(249, 23);
             this.cbTipoE.TabIndex = 21;
             // 
             // txtEstado
             // 
             this.txtEstado.BackColor = System.Drawing.Color.White;
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstado.Location = new System.Drawing.Point(606, 225);
+            this.txtEstado.Location = new System.Drawing.Point(530, 169);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(141, 27);
+            this.txtEstado.Size = new System.Drawing.Size(124, 23);
             this.txtEstado.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(476, 130);
+            this.label9.Location = new System.Drawing.Point(416, 98);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 20);
+            this.label9.Size = new System.Drawing.Size(101, 15);
             this.label9.TabIndex = 16;
             this.label9.Text = "Fecha Caducidad:";
             // 
@@ -153,20 +161,23 @@ namespace Loggin
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrecio.Location = new System.Drawing.Point(606, 76);
+            this.txtPrecio.Location = new System.Drawing.Point(530, 57);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(253, 27);
+            this.txtPrecio.Size = new System.Drawing.Size(222, 23);
             this.txtPrecio.TabIndex = 15;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(616, 27);
+            this.btnEliminar.Location = new System.Drawing.Point(539, 20);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(139, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(122, 28);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -174,12 +185,14 @@ namespace Loggin
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.Location = new System.Drawing.Point(471, 27);
+            this.btnBuscar.Location = new System.Drawing.Point(412, 20);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(139, 37);
+            this.btnBuscar.Size = new System.Drawing.Size(122, 28);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -187,36 +200,37 @@ namespace Loggin
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(94, 29);
+            this.txtBuscar.Location = new System.Drawing.Point(82, 22);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(317, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(278, 23);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 36);
+            this.label2.Location = new System.Drawing.Point(18, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 179);
+            this.label7.Location = new System.Drawing.Point(19, 134);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 20);
+            this.label7.Size = new System.Drawing.Size(51, 15);
             this.label7.TabIndex = 12;
             this.label7.Text = "Modelo:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 133);
+            this.label6.Location = new System.Drawing.Point(19, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(43, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Marca:";
             // 
@@ -225,9 +239,10 @@ namespace Loggin
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(507, 328);
+            this.btnCancelar.Location = new System.Drawing.Point(444, 246);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 26);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -238,9 +253,10 @@ namespace Loggin
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(243, 328);
+            this.btnGuardar.Location = new System.Drawing.Point(213, 246);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(94, 34);
+            this.btnGuardar.Size = new System.Drawing.Size(82, 26);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -249,9 +265,9 @@ namespace Loggin
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(802, 91);
+            this.lblTotal.Location = new System.Drawing.Point(702, 68);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(50, 20);
+            this.lblTotal.Size = new System.Drawing.Size(38, 15);
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "label3";
             // 
@@ -269,10 +285,11 @@ namespace Loggin
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1031, 509);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(901, 378);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -282,17 +299,48 @@ namespace Loggin
             this.dataListado.AllowUserToAddRows = false;
             this.dataListado.AllowUserToDeleteRows = false;
             this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListado.BackgroundColor = System.Drawing.Color.White;
+            this.dataListado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(11, 140);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataListado.EnableHeadersVisualStyles = false;
+            this.dataListado.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataListado.Location = new System.Drawing.Point(10, 105);
+            this.dataListado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListado.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowTemplate.Height = 29;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(1001, 313);
+            this.dataListado.Size = new System.Drawing.Size(876, 235);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -302,9 +350,10 @@ namespace Loggin
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(378, 328);
+            this.btnEditar.Location = new System.Drawing.Point(331, 246);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(94, 34);
+            this.btnEditar.Size = new System.Drawing.Size(82, 26);
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "E&ditar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -314,20 +363,22 @@ namespace Loggin
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 115);
+            this.tabControl1.Location = new System.Drawing.Point(10, 86);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1039, 542);
+            this.tabControl1.Size = new System.Drawing.Size(909, 406);
             this.tabControl1.TabIndex = 7;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1031, 509);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(901, 378);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -357,9 +408,11 @@ namespace Loggin
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(11, 21);
+            this.groupBox1.Location = new System.Drawing.Point(10, 16);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(988, 473);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(864, 355);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Equipos";
@@ -368,18 +421,18 @@ namespace Loggin
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(521, 225);
+            this.label11.Location = new System.Drawing.Point(456, 169);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 20);
+            this.label11.Size = new System.Drawing.Size(45, 15);
             this.label11.TabIndex = 27;
             this.label11.Text = "Estado:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(507, 174);
+            this.label10.Location = new System.Drawing.Point(444, 130);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 20);
+            this.label10.Size = new System.Drawing.Size(73, 15);
             this.label10.TabIndex = 26;
             this.label10.Text = "Tipo Equipo:";
             // 
@@ -387,45 +440,49 @@ namespace Loggin
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.White;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Location = new System.Drawing.Point(133, 225);
+            this.txtCodigo.Location = new System.Drawing.Point(116, 169);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(125, 27);
+            this.txtCodigo.Size = new System.Drawing.Size(110, 23);
             this.txtCodigo.TabIndex = 25;
             // 
             // cbModelo
             // 
             this.cbModelo.BackColor = System.Drawing.Color.White;
             this.cbModelo.FormattingEnabled = true;
-            this.cbModelo.Location = new System.Drawing.Point(133, 171);
+            this.cbModelo.Location = new System.Drawing.Point(116, 128);
+            this.cbModelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbModelo.Name = "cbModelo";
-            this.cbModelo.Size = new System.Drawing.Size(237, 28);
+            this.cbModelo.Size = new System.Drawing.Size(208, 23);
             this.cbModelo.TabIndex = 24;
             // 
             // cbMarca
             // 
             this.cbMarca.BackColor = System.Drawing.Color.White;
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(133, 124);
+            this.cbMarca.Location = new System.Drawing.Point(116, 93);
+            this.cbMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(237, 28);
+            this.cbMarca.Size = new System.Drawing.Size(208, 23);
             this.cbMarca.TabIndex = 23;
             this.cbMarca.SelectedValueChanged += new System.EventHandler(this.cbMarca_SelectedValueChanged);
             // 
             // dtFecha_Cad
             // 
             this.dtFecha_Cad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha_Cad.Location = new System.Drawing.Point(607, 122);
+            this.dtFecha_Cad.Location = new System.Drawing.Point(531, 92);
+            this.dtFecha_Cad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtFecha_Cad.Name = "dtFecha_Cad";
-            this.dtFecha_Cad.Size = new System.Drawing.Size(207, 27);
+            this.dtFecha_Cad.Size = new System.Drawing.Size(182, 23);
             this.dtFecha_Cad.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(548, 83);
+            this.label8.Location = new System.Drawing.Point(480, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
+            this.label8.Size = new System.Drawing.Size(43, 15);
             this.label8.TabIndex = 14;
             this.label8.Text = "Precio:";
             // 
@@ -434,9 +491,10 @@ namespace Loggin
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(118, 328);
+            this.btnNuevo.Location = new System.Drawing.Point(103, 246);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(94, 34);
+            this.btnNuevo.Size = new System.Drawing.Size(82, 26);
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -446,46 +504,48 @@ namespace Loggin
             // 
             this.txtIdprogramacion.BackColor = System.Drawing.Color.White;
             this.txtIdprogramacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdprogramacion.Location = new System.Drawing.Point(133, 76);
+            this.txtIdprogramacion.Location = new System.Drawing.Point(116, 57);
+            this.txtIdprogramacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdprogramacion.Name = "txtIdprogramacion";
             this.txtIdprogramacion.ReadOnly = true;
-            this.txtIdprogramacion.Size = new System.Drawing.Size(339, 27);
+            this.txtIdprogramacion.Size = new System.Drawing.Size(297, 23);
             this.txtIdprogramacion.TabIndex = 4;
             // 
             // txtIdequipo
             // 
             this.txtIdequipo.BackColor = System.Drawing.Color.White;
             this.txtIdequipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdequipo.Location = new System.Drawing.Point(133, 26);
+            this.txtIdequipo.Location = new System.Drawing.Point(116, 20);
+            this.txtIdequipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdequipo.Name = "txtIdequipo";
             this.txtIdequipo.ReadOnly = true;
-            this.txtIdequipo.Size = new System.Drawing.Size(125, 27);
+            this.txtIdequipo.Size = new System.Drawing.Size(110, 23);
             this.txtIdequipo.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 232);
+            this.label5.Location = new System.Drawing.Point(19, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.Size = new System.Drawing.Size(49, 15);
             this.label5.TabIndex = 2;
             this.label5.Text = "Codigo:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 83);
+            this.label4.Location = new System.Drawing.Point(19, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(85, 15);
             this.label4.TabIndex = 1;
             this.label4.Text = "Programacion:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 33);
+            this.label3.Location = new System.Drawing.Point(19, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(57, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Id equipo";
             // 
@@ -498,23 +558,22 @@ namespace Loggin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(405, 57);
+            this.label1.Location = new System.Drawing.Point(354, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 36);
+            this.label1.Size = new System.Drawing.Size(109, 29);
             this.label1.TabIndex = 6;
             this.label1.Text = "Equipos";
             // 
             // Equipos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1198, 724);
+            this.ClientSize = new System.Drawing.Size(1048, 543);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1, 1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Equipos";
             this.Text = "Equipos";
             this.Load += new System.EventHandler(this.Equipos_Load);

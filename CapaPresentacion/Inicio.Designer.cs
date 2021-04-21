@@ -29,6 +29,7 @@ namespace Loggin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.Empleados = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,8 @@ namespace Loggin
             this.GestionEquiposF = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportesM = new System.Windows.Forms.ToolStripMenuItem();
             this.AcercaDeM = new System.Windows.Forms.ToolStripMenuItem();
+            this.SalirM = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +89,8 @@ namespace Loggin
             this.MantenimientoM,
             this.ProcesosM,
             this.ReportesM,
-            this.AcercaDeM});
+            this.AcercaDeM,
+            this.SalirM});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(936, 27);
@@ -147,7 +151,7 @@ namespace Loggin
             // 
             this.RegLoteF.BackColor = System.Drawing.Color.LightGray;
             this.RegLoteF.Name = "RegLoteF";
-            this.RegLoteF.Size = new System.Drawing.Size(187, 24);
+            this.RegLoteF.Size = new System.Drawing.Size(179, 24);
             this.RegLoteF.Text = "Registrar Lote";
             this.RegLoteF.Click += new System.EventHandler(this.RegLoteF_Click);
             // 
@@ -155,7 +159,7 @@ namespace Loggin
             // 
             this.GestionEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.GestionEquiposF.Name = "GestionEquiposF";
-            this.GestionEquiposF.Size = new System.Drawing.Size(187, 24);
+            this.GestionEquiposF.Size = new System.Drawing.Size(179, 24);
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
@@ -172,13 +176,30 @@ namespace Loggin
             this.AcercaDeM.Name = "AcercaDeM";
             this.AcercaDeM.Size = new System.Drawing.Size(84, 23);
             this.AcercaDeM.Text = "Acerca De";
+            this.AcercaDeM.Click += new System.EventHandler(this.AcercaDeM_Click);
+            // 
+            // SalirM
+            // 
+            this.SalirM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exit});
+            this.SalirM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SalirM.Name = "SalirM";
+            this.SalirM.Size = new System.Drawing.Size(122, 23);
+            this.SalirM.Text = "Cierre de Sesion";
+            // 
+            // exit
+            // 
+            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(106, 24);
+            this.exit.Text = "Salir";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.MaximumSize = new System.Drawing.Size(1048, 543);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 535);
             this.panel1.TabIndex = 4;
@@ -194,7 +215,7 @@ namespace Loggin
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.MinimumSize = new System.Drawing.Size(800, 584);
+            this.MinimumSize = new System.Drawing.Size(800, 582);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
@@ -225,5 +246,7 @@ namespace Loggin
         private System.Windows.Forms.ToolStripMenuItem ReportesM;
         private System.Windows.Forms.ToolStripMenuItem AcercaDeM;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem SalirM;
+        private System.Windows.Forms.ToolStripMenuItem exit;
     }
 }

@@ -30,9 +30,17 @@ namespace Loggin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarLote));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridLotes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,11 +52,6 @@ namespace Loggin
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChOption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -66,20 +69,76 @@ namespace Loggin
             // gridLotes
             // 
             this.gridLotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLotes.BackgroundColor = System.Drawing.Color.White;
+            this.gridLotes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridLotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridLotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.fecha,
             this.cantidad,
             this.gestion,
             this.ChOption});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridLotes.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridLotes.EnableHeadersVisualStyles = false;
+            this.gridLotes.GridColor = System.Drawing.Color.SteelBlue;
             this.gridLotes.Location = new System.Drawing.Point(0, 0);
             this.gridLotes.Name = "gridLotes";
+            this.gridLotes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridLotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridLotes.RowTemplate.Height = 25;
             this.gridLotes.Size = new System.Drawing.Size(567, 231);
             this.gridLotes.TabIndex = 0;
             this.gridLotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellContentClick);
             this.gridLotes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellValueChanged_1);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Codigo";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha Ingreso";
+            this.fecha.MaxInputLength = 10;
+            this.fecha.Name = "fecha";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // gestion
+            // 
+            this.gestion.HeaderText = "Gestion";
+            this.gestion.Name = "gestion";
+            // 
+            // ChOption
+            // 
+            this.ChOption.HeaderText = "";
+            this.ChOption.Name = "ChOption";
             // 
             // label1
             // 
@@ -115,12 +174,16 @@ namespace Loggin
             // 
             // btnAceptarL
             // 
+            this.btnAceptarL.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAceptarL.FlatAppearance.BorderSize = 0;
+            this.btnAceptarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAceptarL.ForeColor = System.Drawing.Color.White;
             this.btnAceptarL.Location = new System.Drawing.Point(109, 308);
             this.btnAceptarL.Name = "btnAceptarL";
-            this.btnAceptarL.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptarL.Size = new System.Drawing.Size(92, 28);
             this.btnAceptarL.TabIndex = 5;
             this.btnAceptarL.Text = "Aceptar";
-            this.btnAceptarL.UseVisualStyleBackColor = true;
+            this.btnAceptarL.UseVisualStyleBackColor = false;
             this.btnAceptarL.Click += new System.EventHandler(this.btnAceptarL_Click);
             // 
             // btnEliminarL
@@ -137,12 +200,16 @@ namespace Loggin
             // 
             // btnGuardarL
             // 
-            this.btnGuardarL.Location = new System.Drawing.Point(746, 347);
+            this.btnGuardarL.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGuardarL.FlatAppearance.BorderSize = 0;
+            this.btnGuardarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarL.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarL.Location = new System.Drawing.Point(752, 347);
             this.btnGuardarL.Name = "btnGuardarL";
-            this.btnGuardarL.Size = new System.Drawing.Size(130, 49);
+            this.btnGuardarL.Size = new System.Drawing.Size(124, 39);
             this.btnGuardarL.TabIndex = 8;
             this.btnGuardarL.Text = "Guardar";
-            this.btnGuardarL.UseVisualStyleBackColor = true;
+            this.btnGuardarL.UseVisualStyleBackColor = false;
             this.btnGuardarL.Click += new System.EventHandler(this.btnGuardarL_Click);
             // 
             // dtpFechaIngreso
@@ -175,37 +242,11 @@ namespace Loggin
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // id
-            // 
-            this.id.HeaderText = "Codigo";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha Ingreso";
-            this.fecha.MaxInputLength = 10;
-            this.fecha.Name = "fecha";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // gestion
-            // 
-            this.gestion.HeaderText = "Gestion";
-            this.gestion.Name = "gestion";
-            // 
-            // ChOption
-            // 
-            this.ChOption.HeaderText = "";
-            this.ChOption.Name = "ChOption";
-            // 
             // RegistrarLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1048, 543);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpFechaIngreso);

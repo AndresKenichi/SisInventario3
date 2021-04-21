@@ -30,6 +30,12 @@ namespace Loggin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -183,12 +189,16 @@ namespace Loggin
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(637, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 50);
             this.button1.TabIndex = 7;
             this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtDescripcionMov
@@ -245,6 +255,7 @@ namespace Loggin
             // gridMovimientos
             // 
             this.gridMovimientos.AllowUserToResizeRows = false;
+            this.gridMovimientos.BackgroundColor = System.Drawing.Color.White;
             this.gridMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkOp});
@@ -315,22 +326,55 @@ namespace Loggin
             // 
             // btnAsignar
             // 
+            this.btnAsignar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAsignar.FlatAppearance.BorderSize = 0;
             this.btnAsignar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAsignar.ForeColor = System.Drawing.Color.White;
             this.btnAsignar.Location = new System.Drawing.Point(742, 386);
             this.btnAsignar.Name = "btnAsignar";
             this.btnAsignar.Size = new System.Drawing.Size(114, 40);
             this.btnAsignar.TabIndex = 30;
             this.btnAsignar.Text = "ASIGNAR";
-            this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.UseVisualStyleBackColor = false;
             this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // dtequipos
             // 
-            this.dtequipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtequipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtequipos.BackgroundColor = System.Drawing.Color.White;
+            this.dtequipos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtequipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtequipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtequipos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkSel});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtequipos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtequipos.EnableHeadersVisualStyles = false;
+            this.dtequipos.GridColor = System.Drawing.Color.SteelBlue;
             this.dtequipos.Location = new System.Drawing.Point(544, 82);
             this.dtequipos.Name = "dtequipos";
+            this.dtequipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtequipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtequipos.RowHeadersWidth = 51;
             this.dtequipos.RowTemplate.Height = 25;
             this.dtequipos.Size = new System.Drawing.Size(477, 218);
@@ -345,18 +389,47 @@ namespace Loggin
             this.chkSel.Name = "chkSel";
             this.chkSel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.chkSel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.chkSel.Width = 30;
             // 
             // dtEmpleados
             // 
             this.dtEmpleados.AllowUserToDeleteRows = false;
-            this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtEmpleados.BackgroundColor = System.Drawing.Color.White;
+            this.dtEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkAdd});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtEmpleados.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtEmpleados.EnableHeadersVisualStyles = false;
+            this.dtEmpleados.GridColor = System.Drawing.Color.SteelBlue;
             this.dtEmpleados.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dtEmpleados.Location = new System.Drawing.Point(24, 82);
             this.dtEmpleados.MultiSelect = false;
             this.dtEmpleados.Name = "dtEmpleados";
+            this.dtEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtEmpleados.RowHeadersWidth = 51;
             this.dtEmpleados.RowTemplate.Height = 25;
             this.dtEmpleados.Size = new System.Drawing.Size(453, 218);
@@ -371,7 +444,6 @@ namespace Loggin
             this.chkAdd.MinimumWidth = 6;
             this.chkAdd.Name = "chkAdd";
             this.chkAdd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chkAdd.Width = 30;
             // 
             // lbEquipo
             // 
@@ -505,7 +577,7 @@ namespace Loggin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1048, 744);
+            this.ClientSize = new System.Drawing.Size(1048, 914);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

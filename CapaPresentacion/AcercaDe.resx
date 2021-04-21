@@ -57,7 +57,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>True</value>
-  </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Es un sistema de inventario que ayudé al usuario a organizar y controlar cada equipo de informática que entra y se desvalué de la empresa, facilitando su manejo e ingresos a través del sistema evitando su extravió y solucionando varios problemas a través de la aplicación desktop.
+</value>
+  </data>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>Calderón Guadrón, Douglas Alexander.
+2528652016@mail.utec.edu.sv
+25-2865-2016
+
+Cerón Arias, Johanna Isabel.
+2516562016@mail.utec.edu.sv
+25-1656-2016
+
+Pascasio Calderón, José Daniel.
+2516702016@mail.utec.edu.sv
+25-1670-2016
+
+Siliézar López, Lissette Carolina.
+2523962016@mail.utec.edu.sv
+25-2396-2016
+
+Vásquez Chávez, Kevin Alexander.
+2522812014@mail.utec.edu.sv
+25-2281-2014</value>
+  </data>
 </root>
