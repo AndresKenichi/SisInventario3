@@ -69,7 +69,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                   // Equipos frmEquipo = new Equipos();
+                 //   Equipos frmEquipo = new Equipos();
                    // frmEquipo.Idusu = Convert.ToInt32(Datos.Rows[0][0].ToString());
 
 
