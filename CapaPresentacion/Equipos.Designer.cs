@@ -108,16 +108,19 @@ namespace Loggin
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnImprimir.Location = new System.Drawing.Point(761, 27);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(139, 29);
+            this.btnImprimir.Size = new System.Drawing.Size(139, 37);
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "&Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // cbTipoE
             // 
-            this.cbTipoE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbTipoE.BackColor = System.Drawing.Color.White;
             this.cbTipoE.FormattingEnabled = true;
             this.cbTipoE.Items.AddRange(new object[] {
             "Laptops",
@@ -129,7 +132,7 @@ namespace Loggin
             // 
             // txtEstado
             // 
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtEstado.BackColor = System.Drawing.Color.White;
             this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEstado.Location = new System.Drawing.Point(606, 225);
             this.txtEstado.Name = "txtEstado";
@@ -148,7 +151,7 @@ namespace Loggin
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecio.Location = new System.Drawing.Point(606, 76);
             this.txtPrecio.Name = "txtPrecio";
@@ -158,22 +161,28 @@ namespace Loggin
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEliminar.Location = new System.Drawing.Point(616, 27);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(139, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(139, 37);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBuscar.Location = new System.Drawing.Point(471, 27);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(139, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(139, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
@@ -213,22 +222,28 @@ namespace Loggin
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(507, 333);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(507, 328);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(94, 34);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(243, 333);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(243, 328);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(94, 29);
+            this.btnGuardar.Size = new System.Drawing.Size(94, 34);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblTotal
@@ -284,12 +299,15 @@ namespace Loggin
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(378, 333);
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(378, 328);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(94, 29);
+            this.btnEditar.Size = new System.Drawing.Size(94, 34);
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "E&ditar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // tabControl1
@@ -316,6 +334,7 @@ namespace Loggin
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtCodigo);
@@ -366,7 +385,7 @@ namespace Loggin
             // 
             // txtCodigo
             // 
-            this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtCodigo.BackColor = System.Drawing.Color.White;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Location = new System.Drawing.Point(133, 225);
             this.txtCodigo.Name = "txtCodigo";
@@ -376,7 +395,7 @@ namespace Loggin
             // 
             // cbModelo
             // 
-            this.cbModelo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbModelo.BackColor = System.Drawing.Color.White;
             this.cbModelo.FormattingEnabled = true;
             this.cbModelo.Location = new System.Drawing.Point(133, 171);
             this.cbModelo.Name = "cbModelo";
@@ -385,7 +404,7 @@ namespace Loggin
             // 
             // cbMarca
             // 
-            this.cbMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbMarca.BackColor = System.Drawing.Color.White;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(133, 124);
             this.cbMarca.Name = "cbMarca";
@@ -412,17 +431,20 @@ namespace Loggin
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(118, 333);
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(118, 328);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(94, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(94, 34);
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtIdprogramacion
             // 
-            this.txtIdprogramacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtIdprogramacion.BackColor = System.Drawing.Color.White;
             this.txtIdprogramacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdprogramacion.Location = new System.Drawing.Point(133, 76);
             this.txtIdprogramacion.Name = "txtIdprogramacion";
@@ -432,7 +454,7 @@ namespace Loggin
             // 
             // txtIdequipo
             // 
-            this.txtIdequipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtIdequipo.BackColor = System.Drawing.Color.White;
             this.txtIdequipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdequipo.Location = new System.Drawing.Point(133, 26);
             this.txtIdequipo.Name = "txtIdequipo";
@@ -476,7 +498,7 @@ namespace Loggin
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(408, 51);
+            this.label1.Location = new System.Drawing.Point(405, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 36);
             this.label1.TabIndex = 6;

@@ -56,7 +56,7 @@ namespace CapaPresentacion
 
                 if (this.txtClave.Text == string.Empty)
                 {
-                    MensajeError("Falta ingresar algunos datos, serán remarcados");
+                    MensajeError("Falta ingresar algunos datos!!!!");
                     errorIcono.SetError(txtClave, "Ingrese una Clave");
                 }
             }
@@ -65,11 +65,14 @@ namespace CapaPresentacion
                 DataTable Datos = CapaNegocio.NUsuarios.Login(this.txtCorreo.Text, this.txtClave.Text);
                 if (Datos.Rows.Count == 0)
                 {
-                    MessageBox.Show("No tiene Acceso al Sistema", "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No tiene Acceso al Sistema", "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     Inicio frm = new Inicio();
+                    frm.idUsuario = Datos.Rows[0][0].ToString();
+                    frm.idEmpleado = Datos.Rows[0][1].ToString();
+                    frm.nombres = Datos.Rows[0][2].ToString();
                     frm.Show();
                     this.Hide();
                 }

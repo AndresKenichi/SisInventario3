@@ -10,6 +10,14 @@ namespace Loggin
 {
     public partial class Inicio : Form
     {
+
+        public string idUsuario="";
+        public string idEmpleado="";
+        public string nombres="";
+
+
+     
+
         public Inicio()
         {
             InitializeComponent();
@@ -72,6 +80,8 @@ namespace Loggin
         }
         private Form activeForm = null;
 
+
+
         private void openChildForm(Form child) {
 
             if (activeForm != null)
@@ -88,6 +98,12 @@ namespace Loggin
         }
 
         private void Inicio_Load(object sender, EventArgs e)
+        {
+            Equipos frmEquipo = new Equipos();
+            frmEquipo.Idusu = Convert.ToInt32(idUsuario);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

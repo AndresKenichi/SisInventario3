@@ -81,6 +81,8 @@ namespace Loggin
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MantenimientoM,
             this.ProcesosM,
@@ -88,7 +90,8 @@ namespace Loggin
             this.AcercaDeM});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1070, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -104,27 +107,30 @@ namespace Loggin
             this.UsuariosF,
             this.EquiposF});
             this.MantenimientoM.Name = "MantenimientoM";
-            this.MantenimientoM.Size = new System.Drawing.Size(101, 20);
+            this.MantenimientoM.Size = new System.Drawing.Size(124, 24);
             this.MantenimientoM.Text = "Mantenimiento";
             // 
             // EmpleadosF
             // 
+            this.EmpleadosF.BackColor = System.Drawing.Color.LightGray;
             this.EmpleadosF.Name = "EmpleadosF";
-            this.EmpleadosF.Size = new System.Drawing.Size(132, 22);
+            this.EmpleadosF.Size = new System.Drawing.Size(166, 26);
             this.EmpleadosF.Text = "Empleados";
             this.EmpleadosF.Click += new System.EventHandler(this.EmpleadosF_Click);
             // 
             // UsuariosF
             // 
+            this.UsuariosF.BackColor = System.Drawing.Color.LightGray;
             this.UsuariosF.Name = "UsuariosF";
-            this.UsuariosF.Size = new System.Drawing.Size(132, 22);
+            this.UsuariosF.Size = new System.Drawing.Size(166, 26);
             this.UsuariosF.Text = "Usuarios";
             this.UsuariosF.Click += new System.EventHandler(this.UsuariosF_Click);
             // 
             // EquiposF
             // 
+            this.EquiposF.BackColor = System.Drawing.Color.LightGray;
             this.EquiposF.Name = "EquiposF";
-            this.EquiposF.Size = new System.Drawing.Size(132, 22);
+            this.EquiposF.Size = new System.Drawing.Size(166, 26);
             this.EquiposF.Text = "Equipos";
             this.EquiposF.Click += new System.EventHandler(this.EquiposF_Click);
             // 
@@ -135,61 +141,69 @@ namespace Loggin
             this.RegEquiposF,
             this.GestionEquiposF});
             this.ProcesosM.Name = "ProcesosM";
-            this.ProcesosM.Size = new System.Drawing.Size(66, 20);
+            this.ProcesosM.Size = new System.Drawing.Size(81, 24);
             this.ProcesosM.Text = "Procesos";
             // 
             // RegLoteF
             // 
+            this.RegLoteF.BackColor = System.Drawing.Color.LightGray;
             this.RegLoteF.Name = "RegLoteF";
-            this.RegLoteF.Size = new System.Drawing.Size(165, 22);
+            this.RegLoteF.Size = new System.Drawing.Size(208, 26);
             this.RegLoteF.Text = "Registrar Lote";
             this.RegLoteF.Click += new System.EventHandler(this.RegLoteF_Click);
             // 
             // RegEquiposF
             // 
+            this.RegEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.RegEquiposF.Name = "RegEquiposF";
-            this.RegEquiposF.Size = new System.Drawing.Size(165, 22);
+            this.RegEquiposF.Size = new System.Drawing.Size(208, 26);
             this.RegEquiposF.Text = "Registrar Equipos";
             this.RegEquiposF.Click += new System.EventHandler(this.RegEquiposF_Click);
             // 
             // GestionEquiposF
             // 
+            this.GestionEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.GestionEquiposF.Name = "GestionEquiposF";
-            this.GestionEquiposF.Size = new System.Drawing.Size(165, 22);
+            this.GestionEquiposF.Size = new System.Drawing.Size(208, 26);
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
             // ReportesM
             // 
             this.ReportesM.Name = "ReportesM";
-            this.ReportesM.Size = new System.Drawing.Size(65, 20);
+            this.ReportesM.Size = new System.Drawing.Size(82, 24);
             this.ReportesM.Text = "Reportes";
             // 
             // AcercaDeM
             // 
             this.AcercaDeM.Name = "AcercaDeM";
-            this.AcercaDeM.Size = new System.Drawing.Size(72, 20);
+            this.AcercaDeM.Size = new System.Drawing.Size(91, 24);
             this.AcercaDeM.Text = "Acerca De";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.MaximumSize = new System.Drawing.Size(1048, 543);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(1198, 724);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 537);
+            this.panel1.Size = new System.Drawing.Size(1070, 724);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 561);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1070, 784);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(912, 784);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
