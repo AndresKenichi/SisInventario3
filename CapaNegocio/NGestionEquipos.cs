@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using CapaDatos;
 namespace CapaNegocio
@@ -38,7 +39,10 @@ namespace CapaNegocio
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime Fecha_mov { get => fecha_mov; set => fecha_mov = value; }
 
+        public DataTable MonstrarMovimientos(string nome) {
 
+            return new DGestionEquipos().MostrarMovimientos(nome);
+        }
         public string AsignarEquipos(int id_equi,int id_empleado,int id_encabezado,string  descripc,int id_departamento,DateTime fec_mov,int id_usuario,int estado) {
 
             DGestionEquipos ge = new DGestionEquipos();

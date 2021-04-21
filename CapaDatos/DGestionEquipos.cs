@@ -109,8 +109,8 @@ namespace CapaDatos
                 State.Value = ges.Estado;
                 sqlCmd.Parameters.Add(State);
 
-
-                rpta = sqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO SE INGRESO EL REGISTRO";
+                //== 1 ? "OK" : "NO SE INGRESO EL REGISTRO"
+                rpta = sqlCmd.ExecuteNonQuery().ToString();
 
             }
             catch (Exception e)
@@ -119,6 +119,30 @@ namespace CapaDatos
                 rpta = e.ToString();
             }
             return rpta;
+
+        }
+        public DataTable MostrarMovimientos(string nam)
+        {
+            DataTable DtResultado = new DataTable("movimientos");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "select emp.id_empleado,(emp.nombre+' '+emp.apellido) AS Nombre_Empleado, e.id_equipo,(marcas.marca+' '+modelos.modelo) AS EQUIPO from empleados emp inner join movimientos_enquipos me ON emp.id_empleado = me.id_empleado INNER JOIN equipos e ON me.id_equipo = e.id_equipo INNER JOIN marcas ON marcas.id_marca = e.id_marca INNER JOIN modelos ON modelos.id_modelo = e.id_marca where emp.nombre like '"+ nam + "%' and me.estado = 1";
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
 
         }
     }

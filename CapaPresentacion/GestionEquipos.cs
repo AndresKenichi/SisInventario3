@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,13 +15,17 @@ namespace Loggin
         public bool a=true, b=false;
         public string var_pase1 = "",var_pase2="";
         public NGestionEquipos ge = new NGestionEquipos();
+        public ArrayList MovDet = new ArrayList();
+
         public GestionEquipos()
         {
             InitializeComponent();
             Mostrar();
             LlenarComboTipo();
             LlenarComboDepa();
+            MostrarMov();
             MostrarEmpleado();
+            txtDescripcion.Text = "ASIGNACION DE EQUIPO A EMPLEADO";
         }
 
         //Método para Mostrar
@@ -30,7 +35,10 @@ namespace Loggin
            // this.OcultarColumnas();
           //  lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
+        private void MostrarMov() {
 
+            this.gridMovimientos.DataSource = ge.MonstrarMovimientos(textBox1.Text.ToString());
+        }
         //Método para Mostrar
         private void MostrarEmpleado()
         {
@@ -133,6 +141,11 @@ namespace Loggin
             }
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void dtequipos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             int n = -1;
@@ -170,18 +183,51 @@ namespace Loggin
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            MostrarMov();
+        }
+
+        private void gridMovimientos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gridMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnAsignar_Click(object sender, EventArgs e)
         {
+            
             if (a == true && b == true)
             {
+                String codSql = "";
+                codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 1, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
                 errorProvider1.SetError(cbdepartamento, "");
+
+                switch (codSql) {
+
+                    case "-1":
+
+                        MessageBox.Show("Equipo ya asignado a un usuario");
+                        break;
+                    case "2":
+
+                        MessageBox.Show("Asignado Correctamente");
+                        break;
+                }
                 
-                //MessageBox.Show(" ,id_equipo=" + var_pase2+ "OK  id_empleado=" + var_pase1+", Encabezado= 1, Descripcion= sdasdada , Departamento "+cbdepartamento.SelectedValue +", Fecha Asignacion:"+DateTime.Now+"IdUsuario="+1+", Estado= "+1);
-                MessageBox.Show(ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 1, "ASIGNACION DE EQUIPO A EMPLEADO", Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1));
             }
             else {
+
                 errorProvider1.SetError(cbdepartamento,"SELECCIONE DATOS DE LAS TABLAS");
             }
+        }
+        public void unselect() {
+
+            
         }
     }
 }
