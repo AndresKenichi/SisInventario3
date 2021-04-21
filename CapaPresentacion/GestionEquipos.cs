@@ -25,6 +25,7 @@ namespace Loggin
             LlenarComboDepa();
             MostrarMov();
             MostrarEmpleado();
+            LlenarComboEncabezado();
             txtDescripcion.Text = "ASIGNACION DE EQUIPO A EMPLEADO";
         }
 
@@ -68,6 +69,14 @@ namespace Loggin
             cbdepartamento.ValueMember = "id_departamento";
             cbdepartamento.DisplayMember = "departamento";
             
+        }
+
+        private void LlenarComboEncabezado()
+        {
+            cbEncabezado.DataSource = NEncabezado.Mostrar();
+            cbEncabezado.ValueMember = "id_encabezado";
+            cbEncabezado.DisplayMember = "encabezado";
+
         }
 
         private void GestionEquipos_Load(object sender, EventArgs e)
