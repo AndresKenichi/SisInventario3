@@ -12,6 +12,11 @@ namespace Loggin
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
+        public int Idusu = 1;
+
+
+
+
 
         public Equipos()
         {
@@ -268,6 +273,8 @@ namespace Loggin
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           // Inicio frm = new Inicio();
+            //Idusu = Convert.ToInt32(frm.gIdUsuario());
             try
             {
                 string rpta = "";
@@ -281,12 +288,12 @@ namespace Loggin
                     if (this.IsNuevo)
                     {
                         rpta = NEquipos.Insertar(Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedItem.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), 1 , Convert.ToDateTime(this.dtFecha_Cad.Value));
+                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedItem.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), Idusu, DateTime.Now);
                     }
                     else
                     {
                         rpta = NEquipos.Editar(Convert.ToInt32(this.txtIdequipo.Text.Trim()), Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedItem.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, this.dtFecha_Cad.Value);
+                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedItem.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, DateTime.Now);
 
                     }
                 }
