@@ -106,7 +106,7 @@ namespace Loggin
             this.dataListado.Columns[3].Visible = false;
             this.dataListado.Columns[4].Visible = false;
             this.dataListado.Columns[6].Visible = false;
-            this.dataListado.Columns[13].Visible = false;
+            this.dataListado.Columns[12].Visible = false;
         }
 
         //Método para Mostrar

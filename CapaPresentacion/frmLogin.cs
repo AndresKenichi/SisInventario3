@@ -76,7 +76,7 @@ namespace CapaPresentacion
                     Inicio frm = new Inicio();
                     frm.idUsuario = Datos.Rows[0][0].ToString();
                     frm.idEmpleado = Datos.Rows[0][1].ToString();
-                    frm.nombres = Datos.Rows[0][2].ToString();
+                    //frm.nombres = Datos.Rows[0][2].ToString();
                     frm.Show();
                     this.Hide();
                 }

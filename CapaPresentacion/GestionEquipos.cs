@@ -12,10 +12,9 @@ namespace Loggin
 {
     public partial class GestionEquipos : Form
     {
-        public bool a=true, b=false;
+        public bool a=true, b=false,c=false;
         public string var_pase1 = "",var_pase2="";
         public NGestionEquipos ge = new NGestionEquipos();
-        public ArrayList MovDet = new ArrayList();
 
         public GestionEquipos()
         {
@@ -24,6 +23,7 @@ namespace Loggin
             LlenarComboTipo();
             LlenarComboDepa();
             MostrarMov();
+            OcultarColumnas();
             MostrarEmpleado();
             LlenarComboEncabezado();
             txtDescripcion.Text = "ASIGNACION DE EQUIPO A EMPLEADO";
@@ -39,6 +39,7 @@ namespace Loggin
         private void MostrarMov() {
 
             this.gridMovimientos.DataSource = ge.MonstrarMovimientos(textBox1.Text.ToString());
+
         }
         //Método para Mostrar
         private void MostrarEmpleado()
@@ -81,7 +82,7 @@ namespace Loggin
 
         private void GestionEquipos_Load(object sender, EventArgs e)
         {
-
+            MostrarMov();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace Loggin
 
         private void tabAsignar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
      
@@ -195,25 +196,99 @@ namespace Loggin
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             MostrarMov();
+            OcultarColumnas();
         }
 
         private void gridMovimientos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            int n = -1;
 
+            if (gridMovimientos.Columns[e.ColumnIndex].Name == "chkOp")
+            {
+
+                DataGridViewRow row = gridMovimientos.Rows[e.RowIndex];
+
+
+                DataGridViewCheckBoxCell cellSelecion = row.Cells["chkOp"] as DataGridViewCheckBoxCell;
+
+                if (Convert.ToBoolean(cellSelecion.Value) && cellSelecion.RowIndex != n)
+                {
+                    n = cellSelecion.RowIndex;
+
+                    lbCodMov.Text = row.Cells[1].Value.ToString();
+                    lbEmpledo.Text = (row.Cells[2].Value.ToString());
+                    lbIdEquipo.Text = row.Cells[4].Value.ToString();
+                    lbIdDep.Text = row.Cells[6].Value.ToString();
+                    lbDepartamentoMov.Text = row.Cells[7].Value.ToString();
+                    c = true;
+
+                }
+                else
+                {
+
+                    n = cellSelecion.RowIndex;
+                    if (n == cellSelecion.RowIndex)
+                    {
+                        lbCodMov.Text = "-";
+                        c = false;
+                        lbIdDep.Text = "";
+                        lbEmpledo.Text = "-";
+                    }
+
+                }
+
+            }
+        }
+        private void OcultarColumnas()
+        {
+            this.gridMovimientos.Columns[1].Visible = false;
+            this.gridMovimientos.Columns[2].Visible = false;
+            this.gridMovimientos.Columns[4].Visible = false;
+            this.gridMovimientos.Columns[6].Visible = false;
+            //this.dataListado.Columns[8].Visible = false;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (c==true)
+            {
+                errorProvider3.SetError(textBox1, "");
+
+                if (string.IsNullOrWhiteSpace(txtDescripcionMov.Text))
+                {
+                    
+                    errorProvider2.SetError(txtDescripcionMov, "Ingrese una breve descripcion");
+                }
+                else
+                {
+                   
+                    MessageBox.Show(ge.RecepcionEquipos(Convert.ToInt32(lbCodMov.Text.ToString()),Convert.ToInt32(lbIdEquipo.Text.ToString()),Convert.ToInt32(lbEmpledo.Text.ToString()),Convert.ToInt32(cbEncabezado.SelectedValue.ToString()),txtDescripcionMov.Text.ToString(),Convert.ToInt32(lbIdDep.Text.ToString()), DateTime.Now ,1));
+                    errorProvider2.SetError(txtDescripcionMov, "");
+                    MostrarMov();
+                }
+            }
+            else
+            {
+                errorProvider3.SetError(textBox1, "Seleccione un dato de la tabla");
+            }
         }
 
         private void gridMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == gridMovimientos.Columns["chkOp"].Index)
+            {
+                DataGridViewCheckBoxCell ChkSeleccion = (DataGridViewCheckBoxCell)gridMovimientos.Rows[e.RowIndex].Cells["chkOp"];
+                ChkSeleccion.Value = !Convert.ToBoolean(ChkSeleccion.Value);
+                
+            }
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            
+
             if (a == true && b == true)
             {
                 String codSql = "";
-                codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 1, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
+                codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 13, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
                 errorProvider1.SetError(cbdepartamento, "");
 
                 switch (codSql) {
@@ -222,9 +297,13 @@ namespace Loggin
 
                         MessageBox.Show("Equipo ya asignado a un usuario");
                         break;
+
                     case "2":
 
                         MessageBox.Show("Asignado Correctamente");
+                        break;
+                    default:
+                        MessageBox.Show("Algo no cuadra");
                         break;
                 }
                 
@@ -234,9 +313,35 @@ namespace Loggin
                 errorProvider1.SetError(cbdepartamento,"SELECCIONE DATOS DE LAS TABLAS");
             }
         }
-        public void unselect() {
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void TopSecret() {
+
+            lbCodMov.Visible = false;
+            lbIdEquipo.Visible = false;
+            lbEmpledo.Visible = false;
         }
     }
 }

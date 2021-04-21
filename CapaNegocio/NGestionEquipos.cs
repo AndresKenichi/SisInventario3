@@ -59,5 +59,23 @@ namespace CapaNegocio
             return ge.AsignarEquipos(ge);
             
         }
+        public string RecepcionEquipos(int id_movi,int id_equi, int id_empleado, int id_encabezado, string descripc, int id_departamento, DateTime fec_mov, int id_usuario)
+        {
+
+            DGestionEquipos ge = new DGestionEquipos();
+
+            ge.Id_movimiento = id_movi;
+            ge.Id_equipo = id_equi;
+            ge.Id_empleado = id_empleado;
+            ge.Id_encabezado = id_encabezado;
+            ge.Descripcion = descripc;
+            ge.Id_departamento = id_departamento;
+            ge.Fecha_movimiento = fec_mov;
+            ge.Id_usuario = id_usuario;
+
+
+            return ge.RecepcionEquipos(ge);
+
+        }
     }
 }

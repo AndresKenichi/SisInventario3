@@ -121,16 +121,108 @@ namespace CapaDatos
             return rpta;
 
         }
+        public string RecepcionEquipos(DGestionEquipos ges)
+        {
+
+            string rpta = "";
+
+            Conexion SqlCon = new Conexion();
+            SqlCon.abrir();
+            try
+            {
+
+                
+
+                SqlCommand sqlCmd = new SqlCommand();
+               
+                sqlCmd.Connection = SqlCon.Conectarbd;
+                sqlCmd.CommandText = "sp_RecepcionMov";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                /*SqlParameter IdMov = new SqlParameter();
+                IdMov.ParameterName = "@idmov";
+                IdMov.SqlDbType = SqlDbType.Int;
+                IdMov.Direction = ParameterDirection.Output;
+                sqlCmd.Parameters.Add(IdMov);*/
+
+                SqlParameter IdMov = new SqlParameter();
+                IdMov.ParameterName = "@idmov";
+                IdMov.SqlDbType = SqlDbType.Int;
+                IdMov.Value = ges.Id_movimiento;
+                sqlCmd.Parameters.Add(IdMov);
+
+                SqlParameter IdEquipo = new SqlParameter();
+                //Nombre de La variable y tipo en SP
+                IdEquipo.ParameterName = "@ideq";
+                IdEquipo.SqlDbType = SqlDbType.Int;
+                //Enviamos el valor de la variable local
+                IdEquipo.Value = ges.Id_equipo;
+                //Enviamos el objeto con la informacion
+                sqlCmd.Parameters.Add(IdEquipo);
+
+                SqlParameter IdEmpleado = new SqlParameter();
+                IdEmpleado.ParameterName = "@idemp";
+                IdEmpleado.SqlDbType = SqlDbType.Int;
+                IdEmpleado.Value = ges.Id_empleado;
+                sqlCmd.Parameters.Add(IdEmpleado);
+
+                SqlParameter IdEncabezdo = new SqlParameter();
+                IdEncabezdo.ParameterName = "@idenc";
+                IdEncabezdo.SqlDbType = SqlDbType.Int;
+                IdEncabezdo.Value = ges.Id_encabezado;
+                sqlCmd.Parameters.Add(IdEncabezdo);
+
+                SqlParameter Description = new SqlParameter();
+                Description.ParameterName = "@descrip";
+                Description.SqlDbType = SqlDbType.VarChar;
+                Description.Size = 50;
+                Description.Value = ges.Descripcion;
+                sqlCmd.Parameters.Add(Description);
+
+                SqlParameter IdDepartament = new SqlParameter();
+                IdDepartament.ParameterName = "@iddep";
+                IdDepartament.SqlDbType = SqlDbType.Int;
+                IdDepartament.Value = ges.Id_departamento;
+                sqlCmd.Parameters.Add(IdDepartament);
+
+                SqlParameter Fecha_Asig = new SqlParameter();
+                Fecha_Asig.ParameterName = "@fech";
+                Fecha_Asig.SqlDbType = SqlDbType.DateTime;
+                Fecha_Asig.Value = ges.Fecha_movimiento;
+                sqlCmd.Parameters.Add(Fecha_Asig);
+                //Ejecutamos nuestro Comando
+
+                SqlParameter IdUser = new SqlParameter();
+                IdUser.ParameterName = "@idus";
+                IdUser.SqlDbType = SqlDbType.Int;
+                IdUser.Value = ges.Id_usuario;
+                sqlCmd.Parameters.Add(IdUser);
+
+
+                //== 1 ? "OK" : "NO SE INGRESO EL REGISTRO"
+                rpta = sqlCmd.ExecuteNonQuery().ToString();
+
+            }
+            catch (Exception e)
+            {
+
+                rpta = e.ToString();
+            }
+            SqlCon.cerrar();
+            return rpta;
+
+        }
         public DataTable MostrarMovimientos(string nam)
         {
             DataTable DtResultado = new DataTable("movimientos");
+
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon.ConnectionString = Conexion.Cn;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "select emp.id_empleado,(emp.nombre+' '+emp.apellido) AS Nombre_Empleado, e.id_equipo,(marcas.marca+' '+modelos.modelo) AS EQUIPO from empleados emp inner join movimientos_enquipos me ON emp.id_empleado = me.id_empleado INNER JOIN equipos e ON me.id_equipo = e.id_equipo INNER JOIN marcas ON marcas.id_marca = e.id_marca INNER JOIN modelos ON modelos.id_modelo = e.id_marca where emp.nombre like '"+ nam + "%' and me.estado = 1";
+                SqlCmd.CommandText = "select movimientos_enquipos.id_mov,empleados.id_empleado,(empleados.nombre+' '+empleados.apellido) AS Nombre_Empleado, equipos.id_equipo,(marcas.marca+' '+modelos.modelo) AS Equipodepartamentos, departamentos.id_departamento,departamentos.departamento,(encabezado_movimientos.encabezado) AS Ultimo_Movimiento from movimientos_enquipos INNER JOIN equipos ON movimientos_enquipos.id_equipo=equipos.id_equipo INNER JOIN empleados ON movimientos_enquipos.id_empleado=empleados.id_empleado INNER JOIN marcas ON equipos.id_marca=marcas.id_marca INNER JOIN modelos ON modelos.id_modelo = equipos.id_modelo INNER JOIN departamentos ON movimientos_enquipos.id_departamento=departamentos.id_departamento INNER JOIN encabezado_movimientos ON encabezado_movimientos.id_encabezado=movimientos_enquipos.id_encabezado where empleados.nombre like '"+nam+"%' and movimientos_enquipos.estado=1";
 
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
@@ -142,6 +234,7 @@ namespace CapaDatos
 
                 DtResultado = null;
             }
+            SqlCon.Close();
             return DtResultado;
 
         }
