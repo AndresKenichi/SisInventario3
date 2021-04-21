@@ -99,8 +99,7 @@ namespace Loggin
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            Equipos frmEquipo = new Equipos();
-            frmEquipo.Idusu = Convert.ToInt32(idUsuario);
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

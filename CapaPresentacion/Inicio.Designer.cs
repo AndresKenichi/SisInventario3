@@ -91,7 +91,7 @@ namespace Loggin
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1070, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1070, 33);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -106,15 +106,16 @@ namespace Loggin
             this.EmpleadosF,
             this.UsuariosF,
             this.EquiposF});
+            this.MantenimientoM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MantenimientoM.Name = "MantenimientoM";
-            this.MantenimientoM.Size = new System.Drawing.Size(124, 24);
+            this.MantenimientoM.Size = new System.Drawing.Size(142, 27);
             this.MantenimientoM.Text = "Mantenimiento";
             // 
             // EmpleadosF
             // 
             this.EmpleadosF.BackColor = System.Drawing.Color.LightGray;
             this.EmpleadosF.Name = "EmpleadosF";
-            this.EmpleadosF.Size = new System.Drawing.Size(166, 26);
+            this.EmpleadosF.Size = new System.Drawing.Size(177, 28);
             this.EmpleadosF.Text = "Empleados";
             this.EmpleadosF.Click += new System.EventHandler(this.EmpleadosF_Click);
             // 
@@ -122,7 +123,7 @@ namespace Loggin
             // 
             this.UsuariosF.BackColor = System.Drawing.Color.LightGray;
             this.UsuariosF.Name = "UsuariosF";
-            this.UsuariosF.Size = new System.Drawing.Size(166, 26);
+            this.UsuariosF.Size = new System.Drawing.Size(177, 28);
             this.UsuariosF.Text = "Usuarios";
             this.UsuariosF.Click += new System.EventHandler(this.UsuariosF_Click);
             // 
@@ -130,7 +131,7 @@ namespace Loggin
             // 
             this.EquiposF.BackColor = System.Drawing.Color.LightGray;
             this.EquiposF.Name = "EquiposF";
-            this.EquiposF.Size = new System.Drawing.Size(166, 26);
+            this.EquiposF.Size = new System.Drawing.Size(177, 28);
             this.EquiposF.Text = "Equipos";
             this.EquiposF.Click += new System.EventHandler(this.EquiposF_Click);
             // 
@@ -140,15 +141,16 @@ namespace Loggin
             this.RegLoteF,
             this.RegEquiposF,
             this.GestionEquiposF});
+            this.ProcesosM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ProcesosM.Name = "ProcesosM";
-            this.ProcesosM.Size = new System.Drawing.Size(81, 24);
+            this.ProcesosM.Size = new System.Drawing.Size(91, 27);
             this.ProcesosM.Text = "Procesos";
             // 
             // RegLoteF
             // 
             this.RegLoteF.BackColor = System.Drawing.Color.LightGray;
             this.RegLoteF.Name = "RegLoteF";
-            this.RegLoteF.Size = new System.Drawing.Size(208, 26);
+            this.RegLoteF.Size = new System.Drawing.Size(227, 28);
             this.RegLoteF.Text = "Registrar Lote";
             this.RegLoteF.Click += new System.EventHandler(this.RegLoteF_Click);
             // 
@@ -156,7 +158,7 @@ namespace Loggin
             // 
             this.RegEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.RegEquiposF.Name = "RegEquiposF";
-            this.RegEquiposF.Size = new System.Drawing.Size(208, 26);
+            this.RegEquiposF.Size = new System.Drawing.Size(227, 28);
             this.RegEquiposF.Text = "Registrar Equipos";
             this.RegEquiposF.Click += new System.EventHandler(this.RegEquiposF_Click);
             // 
@@ -164,27 +166,29 @@ namespace Loggin
             // 
             this.GestionEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.GestionEquiposF.Name = "GestionEquiposF";
-            this.GestionEquiposF.Size = new System.Drawing.Size(208, 26);
+            this.GestionEquiposF.Size = new System.Drawing.Size(227, 28);
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
             // ReportesM
             // 
+            this.ReportesM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ReportesM.Name = "ReportesM";
-            this.ReportesM.Size = new System.Drawing.Size(82, 24);
+            this.ReportesM.Size = new System.Drawing.Size(92, 27);
             this.ReportesM.Text = "Reportes";
             // 
             // AcercaDeM
             // 
+            this.AcercaDeM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AcercaDeM.Name = "AcercaDeM";
-            this.AcercaDeM.Size = new System.Drawing.Size(91, 24);
+            this.AcercaDeM.Size = new System.Drawing.Size(101, 27);
             this.AcercaDeM.Text = "Acerca De";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.MaximumSize = new System.Drawing.Size(1198, 724);
             this.panel1.Name = "panel1";

@@ -12,7 +12,7 @@ namespace Loggin
     {
         private bool IsNuevo = false;
         private bool IsEditar = false;
-        public int Idusu = 0;
+        public int Idusu = 1;
 
 
 
