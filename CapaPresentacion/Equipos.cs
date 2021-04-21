@@ -102,7 +102,11 @@ namespace Loggin
         {
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns[1].Visible = false;
-            //this.dataListado.Columns[8].Visible = false;
+            this.dataListado.Columns[2].Visible = false;
+            this.dataListado.Columns[3].Visible = false;
+            this.dataListado.Columns[4].Visible = false;
+            this.dataListado.Columns[6].Visible = false;
+            this.dataListado.Columns[13].Visible = false;
         }
 
         //Método para Mostrar
