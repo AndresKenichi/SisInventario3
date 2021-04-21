@@ -106,7 +106,11 @@ namespace Loggin
             this.dataListado.Columns[3].Visible = false;
             this.dataListado.Columns[4].Visible = false;
             this.dataListado.Columns[6].Visible = false;
+
+            this.dataListado.Columns[13].Visible = false;
+
             this.dataListado.Columns[12].Visible = false;
+
         }
 
         //Método para Mostrar
@@ -362,6 +366,17 @@ namespace Loggin
             this.cbTipoE.SelectedItem = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_equipo"].Value);
             this.txtEstado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["estado"].Value);
             this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            createPDF();
+        }
+
+        public void createPDF()
+        {
+            NEquipos Obj = new NEquipos();
+            Obj.createPDF();
         }
     }
 }

@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Colors;
 
 namespace CapaDatos
 {
@@ -445,6 +453,72 @@ namespace CapaDatos
         }
 
 
+        //agregamos ubicacion del reporte
+        public void createPDF()
+        {
+
+
+            PdfWriter pdfWriter = new PdfWriter("Reporte.pdf");
+            //creamos un PDF document
+            PdfDocument pdf = new PdfDocument(pdfWriter);
+            //creamos la hoja pdf hasta aca ya esta creado el documento
+            Document documento = new Document(pdf, PageSize.LETTER);
+
+
+            //agregamos margenes al documento
+            documento.SetMargins(60, 20, 55, 20);
+
+            //agregamos parrafo de prueba
+            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+
+            documento.Add(new Paragraph("REPORTE DE EQUIPOS \n DEPARTAMENTO DE SOPORTE TECNICO.").SetFont(fontColumnas).SetTextAlignment(TextAlignment.CENTER));
+
+
+
+            String[] columnas = { "Id", "Tipo de equipo", "Marca", "Modelo", "Codigo", "Ubicacion", "Estado" };
+
+            //tamanio de los encabezados
+            float[] tamanios = { 1, 3, 2, 2, 2, 2, 2 };
+            //Creamos la tabla y le asignamos el tamanio
+            Table tabla = new Table(UnitValue.CreatePercentArray(tamanios));
+            tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+            //imprimiendo las columnas, recoremos todos los indices
+            foreach (string columna in columnas)
+            {
+                tabla.AddHeaderCell(new Cell().Add(new Paragraph(columna).SetFont(fontColumnas).SetBackgroundColor(ColorConstants.CYAN)));
+            }
+
+            //creamos la consulta SQL
+            string sql = "SELECT dbo.equipos.id_equipo AS ID, dbo.equipos.tipo_equipo AS 'tipo de equipo', dbo.marcas.marca, dbo.modelos.modelo, dbo.equipos.codigo, dbo.departamentos.departamento AS Ubicacion, CASE dbo.equipos.estado WHEN 1 THEN 'Asignado' WHEN 0 THEN 'Disponible' END AS Estado FROM dbo.marcas INNER JOIN dbo.equipos ON dbo.marcas.id_marca = dbo.equipos.id_marca INNER JOIN dbo.modelos ON dbo.marcas.id_marca = dbo.modelos.id_marca AND dbo.equipos.id_modelo = dbo.modelos.id_modelo CROSS JOIN dbo.departamentos";
+
+            //creamos el objetop conexion y abrimos la conexion
+            Conexion conexionBD = new Conexion();
+            conexionBD.abrir();
+
+
+            SqlCommand comando = new SqlCommand(sql);
+            comando.Connection = conexionBD.Conectarbd;
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Id"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Tipo de equipo"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Marca"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Modelo"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Codigo"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Ubicacion"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Estado"].ToString()).SetFont(fontContenido)));
+            }
+
+
+            //mandamos como parametro la tabla que creamos
+            documento.Add(tabla);
+            documento.Close();
+        }
 
 
 
