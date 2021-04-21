@@ -39,6 +39,7 @@ namespace Loggin
         private void MostrarMov() {
 
             this.gridMovimientos.DataSource = ge.MonstrarMovimientos(textBox1.Text.ToString());
+
         }
         //Método para Mostrar
         private void MostrarEmpleado()
@@ -283,11 +284,11 @@ namespace Loggin
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            
+
             if (a == true && b == true)
             {
                 String codSql = "";
-                codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 1, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
+                codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 13, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
                 errorProvider1.SetError(cbdepartamento, "");
 
                 switch (codSql) {
@@ -296,9 +297,13 @@ namespace Loggin
 
                         MessageBox.Show("Equipo ya asignado a un usuario");
                         break;
+
                     case "2":
 
                         MessageBox.Show("Asignado Correctamente");
+                        break;
+                    default:
+                        MessageBox.Show("Algo no cuadra");
                         break;
                 }
                 

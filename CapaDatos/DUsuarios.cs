@@ -190,7 +190,7 @@ namespace CapaDatos
             try
             {
                 //El la consulta solo traeremos concatenado el nombre y apellido, junto con el cargo. Serán dos columas
-                String cad = "SELECT (e.nombre +' '+ e.apellido) AS Nombre,c.cargo FROM empleados e INNER JOIN cargos c ON e.id_cargo = c.id_cargo where e.id_empleado = " + _Idusuario + "";
+                String cad = "SELECT (e.nombre +' '+ e.apellido) AS Nombre,c.cargo FROM empleados e INNER JOIN cargos c ON e.id_cargo = c.id_cargo where (e.id_empleado = " + _Idusuario +") and (e.id_cargo=4 or e.id_cargo=3)";
 
                 SqlCommand comd = new SqlCommand(cad);
                 comd.Connection = conexion.Conectarbd;
