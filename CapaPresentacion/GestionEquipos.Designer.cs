@@ -49,7 +49,6 @@ namespace Loggin
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.gridMovimientos = new System.Windows.Forms.DataGridView();
             this.chkOp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tablReportes = new System.Windows.Forms.TabPage();
             this.tabAsignar = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -123,7 +122,7 @@ namespace Loggin
             // 
             this.lbDepartamentoMov.AutoSize = true;
             this.lbDepartamentoMov.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbDepartamentoMov.Location = new System.Drawing.Point(758, 128);
+            this.lbDepartamentoMov.Location = new System.Drawing.Point(718, 98);
             this.lbDepartamentoMov.Name = "lbDepartamentoMov";
             this.lbDepartamentoMov.Size = new System.Drawing.Size(15, 19);
             this.lbDepartamentoMov.TabIndex = 15;
@@ -133,26 +132,28 @@ namespace Loggin
             // 
             this.lbIdEquipo.AutoSize = true;
             this.lbIdEquipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIdEquipo.Location = new System.Drawing.Point(562, 51);
+            this.lbIdEquipo.Location = new System.Drawing.Point(522, 21);
             this.lbIdEquipo.Name = "lbIdEquipo";
             this.lbIdEquipo.Size = new System.Drawing.Size(16, 21);
             this.lbIdEquipo.TabIndex = 14;
             this.lbIdEquipo.Text = "-";
+            this.lbIdEquipo.Visible = false;
             // 
             // lbIdDep
             // 
             this.lbIdDep.AutoSize = true;
             this.lbIdDep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbIdDep.Location = new System.Drawing.Point(776, 57);
+            this.lbIdDep.Location = new System.Drawing.Point(736, 27);
             this.lbIdDep.Name = "lbIdDep";
             this.lbIdDep.Size = new System.Drawing.Size(16, 21);
             this.lbIdDep.TabIndex = 13;
             this.lbIdDep.Text = "-";
+            this.lbIdDep.Visible = false;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(666, 132);
+            this.label12.Location = new System.Drawing.Point(626, 102);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 15);
             this.label12.TabIndex = 12;
@@ -162,25 +163,27 @@ namespace Loggin
             // 
             this.lbEmpledo.AutoSize = true;
             this.lbEmpledo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbEmpledo.Location = new System.Drawing.Point(666, 51);
+            this.lbEmpledo.Location = new System.Drawing.Point(626, 21);
             this.lbEmpledo.Name = "lbEmpledo";
             this.lbEmpledo.Size = new System.Drawing.Size(16, 21);
             this.lbEmpledo.TabIndex = 11;
             this.lbEmpledo.Text = "-";
+            this.lbEmpledo.Visible = false;
             // 
             // lbCodMov
             // 
             this.lbCodMov.AutoSize = true;
             this.lbCodMov.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCodMov.Location = new System.Drawing.Point(472, 52);
+            this.lbCodMov.Location = new System.Drawing.Point(432, 22);
             this.lbCodMov.Name = "lbCodMov";
             this.lbCodMov.Size = new System.Drawing.Size(16, 21);
             this.lbCodMov.TabIndex = 9;
             this.lbCodMov.Text = "-";
+            this.lbCodMov.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(666, 391);
+            this.button1.Location = new System.Drawing.Point(637, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 50);
             this.button1.TabIndex = 7;
@@ -190,7 +193,7 @@ namespace Loggin
             // 
             // txtDescripcionMov
             // 
-            this.txtDescripcionMov.Location = new System.Drawing.Point(670, 300);
+            this.txtDescripcionMov.Location = new System.Drawing.Point(630, 270);
             this.txtDescripcionMov.Multiline = true;
             this.txtDescripcionMov.Name = "txtDescripcionMov";
             this.txtDescripcionMov.Size = new System.Drawing.Size(322, 63);
@@ -199,7 +202,7 @@ namespace Loggin
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(670, 282);
+            this.label10.Location = new System.Drawing.Point(630, 252);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 15);
             this.label10.TabIndex = 5;
@@ -208,7 +211,7 @@ namespace Loggin
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(670, 198);
+            this.label9.Location = new System.Drawing.Point(630, 168);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 15);
             this.label9.TabIndex = 4;
@@ -217,7 +220,7 @@ namespace Loggin
             // cbEncabezado
             // 
             this.cbEncabezado.FormattingEnabled = true;
-            this.cbEncabezado.Location = new System.Drawing.Point(673, 216);
+            this.cbEncabezado.Location = new System.Drawing.Point(633, 186);
             this.cbEncabezado.Name = "cbEncabezado";
             this.cbEncabezado.Size = new System.Drawing.Size(177, 23);
             this.cbEncabezado.TabIndex = 3;
@@ -225,7 +228,7 @@ namespace Loggin
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(90, 57);
+            this.label8.Location = new System.Drawing.Point(50, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 15);
             this.label8.TabIndex = 2;
@@ -233,7 +236,7 @@ namespace Loggin
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 78);
+            this.textBox1.Location = new System.Drawing.Point(50, 48);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 23);
             this.textBox1.TabIndex = 1;
@@ -246,7 +249,7 @@ namespace Loggin
             this.gridMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkOp});
             this.gridMovimientos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gridMovimientos.Location = new System.Drawing.Point(90, 121);
+            this.gridMovimientos.Location = new System.Drawing.Point(50, 91);
             this.gridMovimientos.MultiSelect = false;
             this.gridMovimientos.Name = "gridMovimientos";
             this.gridMovimientos.RowHeadersWidth = 51;
@@ -263,15 +266,6 @@ namespace Loggin
             this.chkOp.MinimumWidth = 6;
             this.chkOp.Name = "chkOp";
             this.chkOp.Width = 25;
-            // 
-            // tablReportes
-            // 
-            this.tablReportes.Location = new System.Drawing.Point(4, 24);
-            this.tablReportes.Name = "tablReportes";
-            this.tablReportes.Size = new System.Drawing.Size(1045, 495);
-            this.tablReportes.TabIndex = 2;
-            this.tablReportes.Text = "Reportes";
-            this.tablReportes.UseVisualStyleBackColor = true;
             // 
             // tabAsignar
             // 
@@ -497,7 +491,6 @@ namespace Loggin
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabAsignar);
-            this.tabControl1.Controls.Add(this.tablReportes);
             this.tabControl1.Controls.Add(this.tabRecepcion);
             this.tabControl1.Location = new System.Drawing.Point(3, 8);
             this.tabControl1.Name = "tabControl1";
@@ -512,7 +505,7 @@ namespace Loggin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1048, 693);
+            this.ClientSize = new System.Drawing.Size(1048, 744);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -564,7 +557,6 @@ namespace Loggin
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnMatch;
-        private System.Windows.Forms.TabPage tablReportes;
         private System.Windows.Forms.TabPage tabRecepcion;
         private System.Windows.Forms.Label lbDepartamentoMov;
         private System.Windows.Forms.Label lbIdEquipo;
