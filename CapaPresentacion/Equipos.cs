@@ -281,12 +281,12 @@ namespace Loggin
                     if (this.IsNuevo)
                     {
                         rpta = NEquipos.Insertar(Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedItem.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), 1 , Convert.ToDateTime(this.dtFecha_Cad.Value));
+                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedItem.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), 1 , DateTime.Now);
                     }
                     else
                     {
                         rpta = NEquipos.Editar(Convert.ToInt32(this.txtIdequipo.Text.Trim()), Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedItem.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, this.dtFecha_Cad.Value);
+                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedItem.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, DateTime.Now);
 
                     }
                 }
