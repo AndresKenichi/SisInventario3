@@ -43,7 +43,6 @@ namespace Loggin
             this.ProcesosM = new System.Windows.Forms.ToolStripMenuItem();
             this.RegLoteF = new System.Windows.Forms.ToolStripMenuItem();
             this.GestionEquiposF = new System.Windows.Forms.ToolStripMenuItem();
-            this.ReportesM = new System.Windows.Forms.ToolStripMenuItem();
             this.AcercaDeM = new System.Windows.Forms.ToolStripMenuItem();
             this.SalirM = new System.Windows.Forms.ToolStripMenuItem();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +87,6 @@ namespace Loggin
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MantenimientoM,
             this.ProcesosM,
-            this.ReportesM,
             this.AcercaDeM,
             this.SalirM});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -163,13 +161,6 @@ namespace Loggin
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
-            // ReportesM
-            // 
-            this.ReportesM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ReportesM.Name = "ReportesM";
-            this.ReportesM.Size = new System.Drawing.Size(76, 23);
-            this.ReportesM.Text = "Reportes";
-            // 
             // AcercaDeM
             // 
             this.AcercaDeM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -243,7 +234,6 @@ namespace Loggin
         private System.Windows.Forms.ToolStripMenuItem ProcesosM;
         private System.Windows.Forms.ToolStripMenuItem RegLoteF;
         private System.Windows.Forms.ToolStripMenuItem GestionEquiposF;
-        private System.Windows.Forms.ToolStripMenuItem ReportesM;
         private System.Windows.Forms.ToolStripMenuItem AcercaDeM;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem SalirM;

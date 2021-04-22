@@ -153,7 +153,8 @@ namespace Loggin
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MostrarMov();
+            MostrarEmpleado();
         }
 
         private void dtequipos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
