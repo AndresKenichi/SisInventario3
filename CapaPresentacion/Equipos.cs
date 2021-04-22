@@ -36,14 +36,14 @@ namespace Loggin
         //Mostrar Mensaje de Confirmacion
         private void MensajeOK(String mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         //Mostrar Mensaje de Error
         private void MensajeError(String mensaje)
         {
-            MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, "Sistema de Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -231,7 +231,7 @@ namespace Loggin
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea Eliminar los registros", "Sistema de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Desea Eliminar los registros", "Sistema de Inventario", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
                 {
