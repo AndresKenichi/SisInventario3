@@ -134,6 +134,7 @@ namespace Loggin
             this.txtCodigoUs.Size = new System.Drawing.Size(200, 23);
             this.txtCodigoUs.TabIndex = 6;
             this.txtCodigoUs.TextChanged += new System.EventHandler(this.txtCodigoUs_TextChanged);
+            this.txtCodigoUs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoUs_KeyPress);
             // 
             // btnBuscarUs
             // 
