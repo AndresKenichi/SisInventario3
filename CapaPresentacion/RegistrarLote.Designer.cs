@@ -30,10 +30,9 @@ namespace Loggin
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarLote));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridLotes = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +60,9 @@ namespace Loggin
             // panel1
             // 
             this.panel1.Controls.Add(this.gridLotes);
-            this.panel1.Location = new System.Drawing.Point(308, 100);
+            this.panel1.Location = new System.Drawing.Point(352, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 250);
+            this.panel1.Size = new System.Drawing.Size(649, 267);
             this.panel1.TabIndex = 0;
             // 
             // gridLotes
@@ -71,14 +70,15 @@ namespace Loggin
             this.gridLotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLotes.BackgroundColor = System.Drawing.Color.White;
             this.gridLotes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridLotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridLotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridLotes.ColumnHeadersHeight = 29;
             this.gridLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridLotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -86,29 +86,30 @@ namespace Loggin
             this.cantidad,
             this.gestion,
             this.ChOption});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridLotes.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridLotes.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridLotes.EnableHeadersVisualStyles = false;
             this.gridLotes.GridColor = System.Drawing.Color.SteelBlue;
             this.gridLotes.Location = new System.Drawing.Point(0, 0);
             this.gridLotes.Name = "gridLotes";
             this.gridLotes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridLotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridLotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridLotes.RowHeadersWidth = 51;
             this.gridLotes.RowTemplate.Height = 25;
-            this.gridLotes.Size = new System.Drawing.Size(567, 231);
+            this.gridLotes.Size = new System.Drawing.Size(648, 246);
             this.gridLotes.TabIndex = 0;
             this.gridLotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellContentClick);
             this.gridLotes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellValueChanged_1);
@@ -116,6 +117,7 @@ namespace Loggin
             // id
             // 
             this.id.HeaderText = "Codigo";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -123,64 +125,68 @@ namespace Loggin
             // 
             this.fecha.HeaderText = "Fecha Ingreso";
             this.fecha.MaxInputLength = 10;
+            this.fecha.MinimumWidth = 6;
             this.fecha.Name = "fecha";
             // 
             // cantidad
             // 
             this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
             // 
             // gestion
             // 
             this.gestion.HeaderText = "Gestion";
+            this.gestion.MinimumWidth = 6;
             this.gestion.Name = "gestion";
             // 
             // ChOption
             // 
             this.ChOption.HeaderText = "";
+            this.ChOption.MinimumWidth = 6;
             this.ChOption.Name = "ChOption";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 155);
+            this.label1.Location = new System.Drawing.Point(125, 165);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.Size = new System.Drawing.Size(139, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cantidad de Equipos";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 173);
+            this.textBox1.Location = new System.Drawing.Point(125, 185);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(92, 23);
+            this.textBox1.Size = new System.Drawing.Size(105, 22);
             this.textBox1.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 212);
+            this.label2.Location = new System.Drawing.Point(125, 226);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Gestion";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 230);
+            this.textBox2.Location = new System.Drawing.Point(125, 245);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 23);
+            this.textBox2.Size = new System.Drawing.Size(196, 22);
             this.textBox2.TabIndex = 4;
             // 
             // btnAceptarL
             // 
             this.btnAceptarL.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAceptarL.FlatAppearance.BorderSize = 0;
-            this.btnAceptarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAceptarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAceptarL.ForeColor = System.Drawing.Color.White;
-            this.btnAceptarL.Location = new System.Drawing.Point(109, 308);
+            this.btnAceptarL.Location = new System.Drawing.Point(125, 329);
             this.btnAceptarL.Name = "btnAceptarL";
-            this.btnAceptarL.Size = new System.Drawing.Size(92, 28);
+            this.btnAceptarL.Size = new System.Drawing.Size(105, 30);
             this.btnAceptarL.TabIndex = 5;
             this.btnAceptarL.Text = "Aceptar";
             this.btnAceptarL.UseVisualStyleBackColor = false;
@@ -188,11 +194,13 @@ namespace Loggin
             // 
             // btnEliminarL
             // 
-            this.btnEliminarL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminarL.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarL.Image")));
-            this.btnEliminarL.Location = new System.Drawing.Point(881, 100);
+            this.btnEliminarL.AutoSize = true;
+            this.btnEliminarL.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.errorProvider2.SetIconAlignment(this.btnEliminarL, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.btnEliminarL.Image = global::CapaPresentacion.Properties.Resources.delete;
+            this.btnEliminarL.Location = new System.Drawing.Point(1007, 107);
             this.btnEliminarL.Name = "btnEliminarL";
-            this.btnEliminarL.Size = new System.Drawing.Size(48, 50);
+            this.btnEliminarL.Size = new System.Drawing.Size(102, 102);
             this.btnEliminarL.TabIndex = 7;
             this.btnEliminarL.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnEliminarL.UseVisualStyleBackColor = true;
@@ -202,11 +210,11 @@ namespace Loggin
             // 
             this.btnGuardarL.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnGuardarL.FlatAppearance.BorderSize = 0;
-            this.btnGuardarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardarL.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarL.Location = new System.Drawing.Point(752, 347);
+            this.btnGuardarL.Location = new System.Drawing.Point(859, 370);
             this.btnGuardarL.Name = "btnGuardarL";
-            this.btnGuardarL.Size = new System.Drawing.Size(124, 39);
+            this.btnGuardarL.Size = new System.Drawing.Size(142, 42);
             this.btnGuardarL.TabIndex = 8;
             this.btnGuardarL.Text = "Guardar";
             this.btnGuardarL.UseVisualStyleBackColor = false;
@@ -214,23 +222,23 @@ namespace Loggin
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpFechaIngreso.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpFechaIngreso.CalendarFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpFechaIngreso.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(109, 114);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(125, 122);
             this.dtpFechaIngreso.MaxDate = new System.DateTime(2021, 4, 16, 0, 0, 0, 0);
             this.dtpFechaIngreso.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(102, 25);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(116, 30);
             this.dtpFechaIngreso.TabIndex = 9;
             this.dtpFechaIngreso.Value = new System.DateTime(2021, 4, 16, 0, 0, 0, 0);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(109, 96);
+            this.label3.Location = new System.Drawing.Point(125, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 15);
+            this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Fecha Ingreso";
             // 
@@ -244,10 +252,10 @@ namespace Loggin
             // 
             // RegistrarLote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1048, 543);
+            this.ClientSize = new System.Drawing.Size(1198, 579);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.btnGuardarL);

@@ -29,7 +29,6 @@ namespace Loggin
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.Empleados = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +90,8 @@ namespace Loggin
             this.SalirM});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 27);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1070, 31);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -106,16 +106,16 @@ namespace Loggin
             this.EmpleadosF,
             this.UsuariosF,
             this.EquiposF});
-            this.MantenimientoM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MantenimientoM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.MantenimientoM.Name = "MantenimientoM";
-            this.MantenimientoM.Size = new System.Drawing.Size(117, 23);
+            this.MantenimientoM.Size = new System.Drawing.Size(142, 27);
             this.MantenimientoM.Text = "Mantenimiento";
             // 
             // EmpleadosF
             // 
             this.EmpleadosF.BackColor = System.Drawing.Color.LightGray;
             this.EmpleadosF.Name = "EmpleadosF";
-            this.EmpleadosF.Size = new System.Drawing.Size(145, 24);
+            this.EmpleadosF.Size = new System.Drawing.Size(177, 28);
             this.EmpleadosF.Text = "Empleados";
             this.EmpleadosF.Click += new System.EventHandler(this.EmpleadosF_Click);
             // 
@@ -123,7 +123,7 @@ namespace Loggin
             // 
             this.UsuariosF.BackColor = System.Drawing.Color.LightGray;
             this.UsuariosF.Name = "UsuariosF";
-            this.UsuariosF.Size = new System.Drawing.Size(145, 24);
+            this.UsuariosF.Size = new System.Drawing.Size(177, 28);
             this.UsuariosF.Text = "Usuarios";
             this.UsuariosF.Click += new System.EventHandler(this.UsuariosF_Click);
             // 
@@ -131,7 +131,7 @@ namespace Loggin
             // 
             this.EquiposF.BackColor = System.Drawing.Color.LightGray;
             this.EquiposF.Name = "EquiposF";
-            this.EquiposF.Size = new System.Drawing.Size(145, 24);
+            this.EquiposF.Size = new System.Drawing.Size(177, 28);
             this.EquiposF.Text = "Equipos";
             this.EquiposF.Click += new System.EventHandler(this.EquiposF_Click);
             // 
@@ -140,16 +140,16 @@ namespace Loggin
             this.ProcesosM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RegLoteF,
             this.GestionEquiposF});
-            this.ProcesosM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ProcesosM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.ProcesosM.Name = "ProcesosM";
-            this.ProcesosM.Size = new System.Drawing.Size(76, 23);
+            this.ProcesosM.Size = new System.Drawing.Size(91, 27);
             this.ProcesosM.Text = "Procesos";
             // 
             // RegLoteF
             // 
             this.RegLoteF.BackColor = System.Drawing.Color.LightGray;
             this.RegLoteF.Name = "RegLoteF";
-            this.RegLoteF.Size = new System.Drawing.Size(179, 24);
+            this.RegLoteF.Size = new System.Drawing.Size(217, 28);
             this.RegLoteF.Text = "Registrar Lote";
             this.RegLoteF.Click += new System.EventHandler(this.RegLoteF_Click);
             // 
@@ -157,15 +157,15 @@ namespace Loggin
             // 
             this.GestionEquiposF.BackColor = System.Drawing.Color.LightGray;
             this.GestionEquiposF.Name = "GestionEquiposF";
-            this.GestionEquiposF.Size = new System.Drawing.Size(179, 24);
+            this.GestionEquiposF.Size = new System.Drawing.Size(217, 28);
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
             // AcercaDeM
             // 
-            this.AcercaDeM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AcercaDeM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.AcercaDeM.Name = "AcercaDeM";
-            this.AcercaDeM.Size = new System.Drawing.Size(84, 23);
+            this.AcercaDeM.Size = new System.Drawing.Size(101, 27);
             this.AcercaDeM.Text = "Acerca De";
             this.AcercaDeM.Click += new System.EventHandler(this.AcercaDeM_Click);
             // 
@@ -173,16 +173,16 @@ namespace Loggin
             // 
             this.SalirM.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exit});
-            this.SalirM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SalirM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.SalirM.Name = "SalirM";
-            this.SalirM.Size = new System.Drawing.Size(122, 23);
+            this.SalirM.Size = new System.Drawing.Size(147, 27);
             this.SalirM.Text = "Cierre de Sesion";
             // 
             // exit
             // 
-            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
+            this.exit.Image = global::CapaPresentacion.Properties.Resources.logout;
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(106, 24);
+            this.exit.Size = new System.Drawing.Size(224, 28);
             this.exit.Text = "Salir";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -190,23 +190,23 @@ namespace Loggin
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 535);
+            this.panel1.Size = new System.Drawing.Size(1070, 568);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(936, 562);
+            this.ClientSize = new System.Drawing.Size(1070, 599);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.MinimumSize = new System.Drawing.Size(800, 582);
+            this.MinimumSize = new System.Drawing.Size(912, 618);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);

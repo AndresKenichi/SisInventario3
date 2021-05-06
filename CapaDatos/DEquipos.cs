@@ -362,6 +362,33 @@ namespace CapaDatos
 
         }
 
+        //Metodo para mostrar todos los registros de la tabla 
+        public DataTable MostrarTipo()
+        {
+            DataTable DtResultado = new DataTable("equipos");
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand();
+                SqlCmd.Connection = SqlCon;
+                SqlCmd.CommandText = "spequipo_tipo";
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch (Exception ex)
+            {
+
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
         //Metodo para BuscarNombre
         public DataTable BuscarNombre(DEquipos Equipos)
         {

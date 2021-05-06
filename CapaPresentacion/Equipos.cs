@@ -27,6 +27,7 @@ namespace Loggin
             
             this.LlenarComboMarcas();
             this.LlenarComboModelo(Convert.ToInt32(cbMarca.SelectedValue));
+            this.LlenarComboTipo();
 
 
 
@@ -145,7 +146,14 @@ namespace Loggin
             cbMarca.DisplayMember = "marca";
         }
 
-       
+        private void LlenarComboTipo()
+        {
+            cbTipoE.DataSource = NEquipos.LlenarCmbTipo();
+            cbTipoE.ValueMember = "tipo_equipo";
+            cbTipoE.DisplayMember = "tipo_equipo";
+        }
+
+
 
 
 
@@ -209,7 +217,7 @@ namespace Loggin
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.LlenarComboTipo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -296,12 +304,12 @@ namespace Loggin
                     if (this.IsNuevo)
                     {
                         rpta = NEquipos.Insertar(Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedItem.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), Idusu, DateTime.Now);
+                            Convert.ToDateTime(this.dtFecha_Cad.Value), this.cbTipoE.SelectedValue.ToString() , Convert.ToInt32(this.txtEstado.Text.Trim()), Idusu, DateTime.Now);
                     }
                     else
                     {
                         rpta = NEquipos.Editar(Convert.ToInt32(this.txtIdequipo.Text.Trim()), Convert.ToInt32(this.txtIdprogramacion.Text.Trim()), Convert.ToInt32(this.cbMarca.SelectedValue), Convert.ToInt32(this.cbModelo.SelectedValue), this.txtCodigo.Text.Trim().ToUpper(), Convert.ToDecimal(this.txtPrecio.Text),
-                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedItem.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, DateTime.Now);
+                            this.dtFecha_Cad.Value, this.cbTipoE.SelectedValue.ToString(), Convert.ToInt32(this.txtEstado.Text.Trim().ToUpper()), 1, DateTime.Now);
 
                     }
                 }
@@ -363,7 +371,7 @@ namespace Loggin
             this.txtCodigo.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["codigo"].Value);
             this.txtPrecio.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["precio_eq"].Value);
             this.dtFecha_Cad.Value= Convert.ToDateTime(this.dataListado.CurrentRow.Cells["fecha_cad"].Value);
-            this.cbTipoE.SelectedItem = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_equipo"].Value);
+            this.cbTipoE.SelectedValue = Convert.ToString(this.dataListado.CurrentRow.Cells["tipo_equipo"].Value);
             this.txtEstado.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["estado"].Value);
             this.tabControl1.SelectedIndex = 1;
         }
