@@ -60,9 +60,9 @@ namespace Loggin
             // panel1
             // 
             this.panel1.Controls.Add(this.gridLotes);
-            this.panel1.Location = new System.Drawing.Point(352, 107);
+            this.panel1.Location = new System.Drawing.Point(327, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 267);
+            this.panel1.Size = new System.Drawing.Size(712, 296);
             this.panel1.TabIndex = 0;
             // 
             // gridLotes
@@ -109,7 +109,7 @@ namespace Loggin
             this.gridLotes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridLotes.RowHeadersWidth = 51;
             this.gridLotes.RowTemplate.Height = 25;
-            this.gridLotes.Size = new System.Drawing.Size(648, 246);
+            this.gridLotes.Size = new System.Drawing.Size(709, 272);
             this.gridLotes.TabIndex = 0;
             this.gridLotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellContentClick);
             this.gridLotes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLotes_CellValueChanged_1);
@@ -186,7 +186,7 @@ namespace Loggin
             this.btnAceptarL.ForeColor = System.Drawing.Color.White;
             this.btnAceptarL.Location = new System.Drawing.Point(125, 329);
             this.btnAceptarL.Name = "btnAceptarL";
-            this.btnAceptarL.Size = new System.Drawing.Size(105, 30);
+            this.btnAceptarL.Size = new System.Drawing.Size(116, 40);
             this.btnAceptarL.TabIndex = 5;
             this.btnAceptarL.Text = "Aceptar";
             this.btnAceptarL.UseVisualStyleBackColor = false;
@@ -198,7 +198,7 @@ namespace Loggin
             this.btnEliminarL.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.errorProvider2.SetIconAlignment(this.btnEliminarL, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.btnEliminarL.Image = global::CapaPresentacion.Properties.Resources.delete;
-            this.btnEliminarL.Location = new System.Drawing.Point(1007, 107);
+            this.btnEliminarL.Location = new System.Drawing.Point(1045, 107);
             this.btnEliminarL.Name = "btnEliminarL";
             this.btnEliminarL.Size = new System.Drawing.Size(102, 102);
             this.btnEliminarL.TabIndex = 7;
@@ -212,7 +212,7 @@ namespace Loggin
             this.btnGuardarL.FlatAppearance.BorderSize = 0;
             this.btnGuardarL.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardarL.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarL.Location = new System.Drawing.Point(859, 370);
+            this.btnGuardarL.Location = new System.Drawing.Point(858, 433);
             this.btnGuardarL.Name = "btnGuardarL";
             this.btnGuardarL.Size = new System.Drawing.Size(142, 42);
             this.btnGuardarL.TabIndex = 8;

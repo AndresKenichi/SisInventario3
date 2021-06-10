@@ -347,5 +347,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void cbidcargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

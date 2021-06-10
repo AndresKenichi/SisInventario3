@@ -7,10 +7,11 @@ namespace CapaDatos
 {
     class Conexion
     {
+        //Server=tcp:inventariocetu.database.windows.net,1433;Initial Catalog = inventario2; Persist Security Info=False;User ID = pasca; Password=password.12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;
         //public static string Cn = @"Data Source=KEVIN; Initial Catalog=inventario2; Integrated Security=true";
-        public static string Cn = @"Data Source=DESKTOP-T3VRL82\SQLEXPRESS; Initial Catalog=inventario2; Integrated Security=true";
+       // public static string Cn = @"Data Source=DESKTOP-T3VRL82\SQLEXPRESS; Initial Catalog=inventario2; Integrated Security=true";
         //public static string Cn = @"Data Source=DESKTOP-I39N25J\JOSHEP; Initial Catalog=inventario2; Integrated Security=true";
-        
+        public static string Cn = "Server=tcp:inventariocetu2.database.windows.net,1433;Initial Catalog=inventario2;Persist Security Info=False;User ID=pasca;Password=password.12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
         public SqlConnection Conectarbd = new SqlConnection();
 
         //Constructor

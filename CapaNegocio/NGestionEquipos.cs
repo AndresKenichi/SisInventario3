@@ -8,7 +8,7 @@ namespace CapaNegocio
     public class NGestionEquipos
     {
 
-        int id_mov, id_us, id_eq, id_dep, id_enc, id_emp,est;
+        int id_mov, id_us, id_eq, id_dep, id_enc, id_emp, est;
         string descripcion;
         DateTime fecha_mov;
 
@@ -26,7 +26,7 @@ namespace CapaNegocio
         }
         public NGestionEquipos()
         {
-            
+
         }
 
         public int Id_mov { get => id_mov; set => id_mov = value; }
@@ -39,11 +39,13 @@ namespace CapaNegocio
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime Fecha_mov { get => fecha_mov; set => fecha_mov = value; }
 
-        public DataTable MonstrarMovimientos(string nome) {
+        public DataTable MonstrarMovimientos(string nome)
+        {
 
             return new DGestionEquipos().MostrarMovimientos(nome);
         }
-        public string AsignarEquipos(int id_equi,int id_empleado,int id_encabezado,string  descripc,int id_departamento,DateTime fec_mov,int id_usuario,int estado) {
+        public string AsignarEquipos(int id_equi, int id_empleado, int id_encabezado, string descripc, int id_departamento, DateTime fec_mov, int id_usuario, int estado)
+        {
 
             DGestionEquipos ge = new DGestionEquipos();
 
@@ -57,9 +59,9 @@ namespace CapaNegocio
             ge.Estado = estado;
 
             return ge.AsignarEquipos(ge);
-            
+
         }
-        public string RecepcionEquipos(int id_movi,int id_equi, int id_empleado, int id_encabezado, string descripc, int id_departamento, DateTime fec_mov, int id_usuario)
+        public string RecepcionEquipos(int id_movi, int id_equi, int id_empleado, int id_encabezado, string descripc, int id_departamento, DateTime fec_mov, int id_usuario)
         {
 
             DGestionEquipos ge = new DGestionEquipos();
@@ -76,6 +78,29 @@ namespace CapaNegocio
 
             return ge.RecepcionEquipos(ge);
 
+        }
+        public string RecepcionEquipos2(int id_movi, int id_equi, int id_empleado, int id_encabezado, string descripc, int id_departamento, DateTime fec_mov, int id_usuario)
+        {
+
+            DGestionEquipos ge = new DGestionEquipos();
+
+            ge.Id_movimiento = id_movi;
+            ge.Id_equipo = id_equi;
+            ge.Id_empleado = id_empleado;
+            ge.Id_encabezado = id_encabezado;
+            ge.Descripcion = descripc;
+            ge.Id_departamento = id_departamento;
+            ge.Fecha_movimiento = fec_mov;
+            ge.Id_usuario = id_usuario;
+
+
+            return ge.RecepcionEquipos2(ge);
+
+        }
+
+        public static DataTable MostrarE()
+        {
+            return new DGestionEquipos().MostrarE();
         }
     }
 }

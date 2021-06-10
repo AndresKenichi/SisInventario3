@@ -42,10 +42,14 @@ namespace Loggin
             this.ProcesosM = new System.Windows.Forms.ToolStripMenuItem();
             this.RegLoteF = new System.Windows.Forms.ToolStripMenuItem();
             this.GestionEquiposF = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeEquipos = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteProgramacionLotes = new System.Windows.Forms.ToolStripMenuItem();
             this.AcercaDeM = new System.Windows.Forms.ToolStripMenuItem();
             this.SalirM = new System.Windows.Forms.ToolStripMenuItem();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reporteDeEmpleados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +90,7 @@ namespace Loggin
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MantenimientoM,
             this.ProcesosM,
+            this.reportesToolStripMenuItem,
             this.AcercaDeM,
             this.SalirM});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -94,7 +99,6 @@ namespace Loggin
             this.menuStrip1.Size = new System.Drawing.Size(1070, 31);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // MantenimientoM
             // 
@@ -161,6 +165,31 @@ namespace Loggin
             this.GestionEquiposF.Text = "Gestion Equipos";
             this.GestionEquiposF.Click += new System.EventHandler(this.GestionEquiposF_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeEquipos,
+            this.reporteProgramacionLotes,
+            this.reporteDeEmpleados});
+            this.reportesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(92, 27);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteDeEquipos
+            // 
+            this.reporteDeEquipos.Name = "reporteDeEquipos";
+            this.reporteDeEquipos.Size = new System.Drawing.Size(308, 28);
+            this.reporteDeEquipos.Text = "Reporte de equipos";
+            this.reporteDeEquipos.Click += new System.EventHandler(this.reporteDeEquipos_Click);
+            // 
+            // reporteProgramacionLotes
+            // 
+            this.reporteProgramacionLotes.Name = "reporteProgramacionLotes";
+            this.reporteProgramacionLotes.Size = new System.Drawing.Size(308, 28);
+            this.reporteProgramacionLotes.Text = "Reporte programacion lotes";
+            this.reporteProgramacionLotes.Click += new System.EventHandler(this.reporteProgramacionLotes_Click);
+            // 
             // AcercaDeM
             // 
             this.AcercaDeM.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
@@ -182,7 +211,7 @@ namespace Loggin
             // 
             this.exit.Image = global::CapaPresentacion.Properties.Resources.logout;
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(224, 28);
+            this.exit.Size = new System.Drawing.Size(126, 28);
             this.exit.Text = "Salir";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -195,6 +224,13 @@ namespace Loggin
             this.panel1.Size = new System.Drawing.Size(1070, 568);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // reporteDeEmpleados
+            // 
+            this.reporteDeEmpleados.Name = "reporteDeEmpleados";
+            this.reporteDeEmpleados.Size = new System.Drawing.Size(308, 28);
+            this.reporteDeEmpleados.Text = "Reporte de Empleados";
+            this.reporteDeEmpleados.Click += new System.EventHandler(this.reporteDeEmpleados_Click);
             // 
             // Inicio
             // 
@@ -238,5 +274,9 @@ namespace Loggin
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem SalirM;
         private System.Windows.Forms.ToolStripMenuItem exit;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeEquipos;
+        private System.Windows.Forms.ToolStripMenuItem reporteProgramacionLotes;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeEmpleados;
     }
 }

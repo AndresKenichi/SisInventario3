@@ -43,13 +43,14 @@ namespace CapaDatos
             string mss = "";
             try
             {
-                SqlCommand add = new SqlCommand("INSERT INTO programacion(fecha,cant_equipos,gestion,estado) VALUES(@fec,@cant,@gest,1)");
+                SqlCommand add = new SqlCommand("INSERT INTO programacion(fecha,cant_equipos,gestion,id_usuario,fecha_modificacion,estado) VALUES(@fec,@cant,@gest,@idu,@fechaM,1)");
                 add.Connection = con.Conectarbd;
 
                 add.Parameters.AddWithValue("@fec", Convert.ToDateTime(Fecha_ingreso));
                 add.Parameters.AddWithValue("@cant", Convert.ToInt32(Cantidad));
                 add.Parameters.AddWithValue("@gest", Convert.ToString(Gestion));
-                add.Parameters.AddWithValue("@idu", Convert.ToString(Gestion));
+                add.Parameters.AddWithValue("@idu", Convert.ToString(Id_usuario));
+                add.Parameters.AddWithValue("@fechaM",Convert.ToDateTime(Fecha_modificacion));
                 add.ExecuteNonQuery();
 
                 mss = "OK";

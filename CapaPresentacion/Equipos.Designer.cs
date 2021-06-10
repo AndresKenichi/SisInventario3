@@ -66,13 +66,13 @@ namespace Loggin
             this.dtFecha_Cad = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.txtIdprogramacion = new System.Windows.Forms.TextBox();
             this.txtIdequipo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.txtIdprogramacion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -118,7 +118,7 @@ namespace Loggin
             this.btnImprimir.Location = new System.Drawing.Point(761, 22);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(139, 30);
+            this.btnImprimir.Size = new System.Drawing.Size(139, 37);
             this.btnImprimir.TabIndex = 4;
             this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -174,7 +174,7 @@ namespace Loggin
             this.btnEliminar.Location = new System.Drawing.Point(616, 22);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(139, 30);
+            this.btnEliminar.Size = new System.Drawing.Size(139, 37);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -189,7 +189,7 @@ namespace Loggin
             this.btnBuscar.Location = new System.Drawing.Point(471, 22);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(139, 30);
+            this.btnBuscar.Size = new System.Drawing.Size(139, 37);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -239,7 +239,7 @@ namespace Loggin
             this.btnCancelar.Location = new System.Drawing.Point(507, 262);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(110, 37);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@ namespace Loggin
             this.btnGuardar.Location = new System.Drawing.Point(243, 262);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(94, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(110, 37);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -286,10 +286,11 @@ namespace Loggin
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1031, 404);
+            this.tabPage1.Size = new System.Drawing.Size(1373, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dataListado
             // 
@@ -338,7 +339,7 @@ namespace Loggin
             this.dataListado.RowHeadersWidth = 51;
             this.dataListado.RowTemplate.Height = 29;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(1001, 250);
+            this.dataListado.Size = new System.Drawing.Size(1356, 422);
             this.dataListado.TabIndex = 7;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -351,7 +352,7 @@ namespace Loggin
             this.btnEditar.Location = new System.Drawing.Point(378, 262);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(94, 28);
+            this.btnEditar.Size = new System.Drawing.Size(110, 37);
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "E&ditar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -365,7 +366,7 @@ namespace Loggin
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1039, 433);
+            this.tabControl1.Size = new System.Drawing.Size(1381, 606);
             this.tabControl1.TabIndex = 7;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -376,7 +377,7 @@ namespace Loggin
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1031, 404);
+            this.tabPage2.Size = new System.Drawing.Size(1373, 577);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -410,7 +411,7 @@ namespace Loggin
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(987, 378);
+            this.groupBox1.Size = new System.Drawing.Size(1109, 410);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Equipos";
@@ -474,6 +475,7 @@ namespace Loggin
             this.dtFecha_Cad.Name = "dtFecha_Cad";
             this.dtFecha_Cad.Size = new System.Drawing.Size(207, 22);
             this.dtFecha_Cad.TabIndex = 22;
+            this.dtFecha_Cad.ValueChanged += new System.EventHandler(this.dtFecha_Cad_ValueChanged);
             // 
             // label8
             // 
@@ -492,22 +494,11 @@ namespace Loggin
             this.btnNuevo.Location = new System.Drawing.Point(118, 262);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(94, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(110, 37);
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // txtIdprogramacion
-            // 
-            this.txtIdprogramacion.BackColor = System.Drawing.Color.White;
-            this.txtIdprogramacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdprogramacion.Location = new System.Drawing.Point(133, 61);
-            this.txtIdprogramacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdprogramacion.Name = "txtIdprogramacion";
-            this.txtIdprogramacion.ReadOnly = true;
-            this.txtIdprogramacion.Size = new System.Drawing.Size(339, 22);
-            this.txtIdprogramacion.TabIndex = 4;
             // 
             // txtIdequipo
             // 
@@ -562,12 +553,23 @@ namespace Loggin
             this.label1.TabIndex = 6;
             this.label1.Text = "Equipos";
             // 
+            // txtIdprogramacion
+            // 
+            this.txtIdprogramacion.BackColor = System.Drawing.Color.White;
+            this.txtIdprogramacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdprogramacion.Location = new System.Drawing.Point(133, 61);
+            this.txtIdprogramacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdprogramacion.Name = "txtIdprogramacion";
+            this.txtIdprogramacion.ReadOnly = true;
+            this.txtIdprogramacion.Size = new System.Drawing.Size(339, 22);
+            this.txtIdprogramacion.TabIndex = 4;
+            // 
             // Equipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1198, 579);
+            this.ClientSize = new System.Drawing.Size(1407, 718);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -615,7 +617,6 @@ namespace Loggin
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.TextBox txtIdprogramacion;
         private System.Windows.Forms.TextBox txtIdequipo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -630,5 +631,6 @@ namespace Loggin
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtIdprogramacion;
     }
 }

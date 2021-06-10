@@ -25,13 +25,9 @@ namespace Loggin
             this.MaximizeBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Width = 1080;
-            this.Height = 620;
+            this.Height = 720;
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         
 
        private void EmpleadosF_Click(object sender, EventArgs e)
@@ -121,6 +117,26 @@ namespace Loggin
 
 
             openChildForm(gse);
+        }
+
+        private void reporteDeEquipos_Click(object sender, EventArgs e)
+        {
+            ReporteEquipos reporteEquipos = new ReporteEquipos();
+            openChildForm(reporteEquipos);
+
+        }
+
+        private void reporteProgramacionLotes_Click(object sender, EventArgs e)
+        {
+            ReporteProgramacion reporteProgramacion = new ReporteProgramacion();
+            openChildForm(reporteProgramacion);
+        }
+
+        private void reporteDeEmpleados_Click(object sender, EventArgs e)
+        {
+            ReporteEmpleados reporteEmpleados = new ReporteEmpleados();
+            openChildForm(reporteEmpleados);
+
         }
     }
 }

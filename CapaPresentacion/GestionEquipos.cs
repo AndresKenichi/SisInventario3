@@ -12,8 +12,8 @@ namespace Loggin
 {
     public partial class GestionEquipos : Form
     {
-        public bool a=true, b=false,c=false;
-        public string var_pase1 = "",var_pase2="";
+        public bool a = true, b = false, c = false;
+        public string var_pase1 = "", var_pase2 = "";
         public NGestionEquipos ge = new NGestionEquipos();
 
         public GestionEquipos()
@@ -33,10 +33,11 @@ namespace Loggin
         private void Mostrar()
         {
             this.dtequipos.DataSource = NEquipos.Mostrar2();
-           // this.OcultarColumnas();
-          //  lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+            // this.OcultarColumnas();
+            //  lblTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
         }
-        private void MostrarMov() {
+        private void MostrarMov()
+        {
 
             this.gridMovimientos.DataSource = ge.MonstrarMovimientos(textBox1.Text.ToString());
 
@@ -69,7 +70,7 @@ namespace Loggin
             cbdepartamento.DataSource = NDepartamentos.Mostrar();
             cbdepartamento.ValueMember = "id_departamento";
             cbdepartamento.DisplayMember = "departamento";
-            
+
         }
 
         private void LlenarComboEncabezado()
@@ -82,7 +83,9 @@ namespace Loggin
 
         private void GestionEquipos_Load(object sender, EventArgs e)
         {
+            Mostrar();
             MostrarMov();
+            MostrarEmpleado();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -92,10 +95,12 @@ namespace Loggin
 
         private void tabAsignar_Click(object sender, EventArgs e)
         {
-            
+            Mostrar();
+            MostrarMov();
+            MostrarEmpleado();
         }
 
-     
+
 
         private void dtEmpleados_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -103,13 +108,13 @@ namespace Loggin
 
             if (dtEmpleados.Columns[e.ColumnIndex].Name == "chkAdd")
             {
-                
+
                 DataGridViewRow row = dtEmpleados.Rows[e.RowIndex];
 
-                
+
                 DataGridViewCheckBoxCell cellSelecion = row.Cells["chkAdd"] as DataGridViewCheckBoxCell;
 
-                if (Convert.ToBoolean(cellSelecion.Value)&&cellSelecion.RowIndex!=n)
+                if (Convert.ToBoolean(cellSelecion.Value) && cellSelecion.RowIndex != n)
                 {
                     n = cellSelecion.RowIndex;
 
@@ -117,16 +122,18 @@ namespace Loggin
                     lbNombreE.Text = (row.Cells[2].Value.ToString());
                     a = true;
                 }
-                else {
+                else
+                {
 
                     n = cellSelecion.RowIndex;
-                    if (n == cellSelecion.RowIndex) {
+                    if (n == cellSelecion.RowIndex)
+                    {
 
                         lbNombreE.Text = "";
                         var_pase1 = "";
                         a = false;
                     }
-                    
+
                 }
 
             }
@@ -140,7 +147,7 @@ namespace Loggin
                 ChkSeleccion.Value = !Convert.ToBoolean(ChkSeleccion.Value);
             }
         }
-        
+
 
         private void dtequipos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,6 +160,7 @@ namespace Loggin
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Mostrar();
             MostrarMov();
             MostrarEmpleado();
         }
@@ -176,7 +184,7 @@ namespace Loggin
                     var_pase2 = row.Cells[1].Value.ToString();
                     lbEquipo.Text = (row.Cells[2].Value.ToString());
                     b = true;
-                   
+
                 }
                 else
                 {
@@ -250,21 +258,32 @@ namespace Loggin
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (c==true)
+            if (c == true)
             {
                 errorProvider3.SetError(textBox1, "");
 
                 if (string.IsNullOrWhiteSpace(txtDescripcionMov.Text))
                 {
-                    
+
                     errorProvider2.SetError(txtDescripcionMov, "Ingrese una breve descripcion");
                 }
                 else
                 {
-                   
-                    MessageBox.Show(ge.RecepcionEquipos(Convert.ToInt32(lbCodMov.Text.ToString()),Convert.ToInt32(lbIdEquipo.Text.ToString()),Convert.ToInt32(lbEmpledo.Text.ToString()),Convert.ToInt32(cbEncabezado.SelectedValue.ToString()),txtDescripcionMov.Text.ToString(),Convert.ToInt32(lbIdDep.Text.ToString()), DateTime.Now ,1));
-                    errorProvider2.SetError(txtDescripcionMov, "");
-                    MostrarMov();
+                    if ((Convert.ToInt32(cbEncabezado.SelectedValue) == 15) || (Convert.ToInt32(cbEncabezado.SelectedValue) == 16) || (Convert.ToInt32(cbEncabezado.SelectedValue) == 17))
+                    {
+                        MessageBox.Show(ge.RecepcionEquipos2(Convert.ToInt32(lbCodMov.Text.ToString()), Convert.ToInt32(lbIdEquipo.Text.ToString()), Convert.ToInt32(lbEmpledo.Text.ToString()), Convert.ToInt32(cbEncabezado.SelectedValue.ToString()), txtDescripcionMov.Text.ToString(), Convert.ToInt32(lbIdDep.Text.ToString()), DateTime.Now, 1));
+                        errorProvider2.SetError(txtDescripcionMov, "");
+                        MostrarMov();
+                    }
+                    else
+                    {
+
+                        MessageBox.Show(ge.RecepcionEquipos(Convert.ToInt32(lbCodMov.Text.ToString()), Convert.ToInt32(lbIdEquipo.Text.ToString()), Convert.ToInt32(lbEmpledo.Text.ToString()), Convert.ToInt32(cbEncabezado.SelectedValue.ToString()), txtDescripcionMov.Text.ToString(), Convert.ToInt32(lbIdDep.Text.ToString()), DateTime.Now, 1));
+                        errorProvider2.SetError(txtDescripcionMov, "");
+                        MostrarMov();
+                    }
+
+
                 }
             }
             else
@@ -273,13 +292,21 @@ namespace Loggin
             }
         }
 
+        private void tabRecepcion_Click(object sender, EventArgs e)
+        {
+            Mostrar();
+            MostrarMov();
+            MostrarEmpleado();
+
+        }
+
         private void gridMovimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == gridMovimientos.Columns["chkOp"].Index)
             {
                 DataGridViewCheckBoxCell ChkSeleccion = (DataGridViewCheckBoxCell)gridMovimientos.Rows[e.RowIndex].Cells["chkOp"];
                 ChkSeleccion.Value = !Convert.ToBoolean(ChkSeleccion.Value);
-                
+
             }
         }
 
@@ -292,7 +319,8 @@ namespace Loggin
                 codSql = ge.AsignarEquipos(Convert.ToInt32(var_pase2), Convert.ToInt32(var_pase1), 13, txtDescripcion.Text.ToString(), Convert.ToInt32(cbdepartamento.SelectedValue), DateTime.Now, 1, 1);
                 errorProvider1.SetError(cbdepartamento, "");
 
-                switch (codSql) {
+                switch (codSql)
+                {
 
                     case "-1":
 
@@ -301,17 +329,20 @@ namespace Loggin
 
                     case "2":
 
+
                         MessageBox.Show("Asignado Correctamente");
+                        Mostrar();
                         break;
                     default:
                         MessageBox.Show("Algo no cuadra");
                         break;
                 }
-                
-            }
-            else {
 
-                errorProvider1.SetError(cbdepartamento,"SELECCIONE DATOS DE LAS TABLAS");
+            }
+            else
+            {
+
+                errorProvider1.SetError(cbdepartamento, "SELECCIONE DATOS DE LAS TABLAS");
             }
         }
 
@@ -338,7 +369,8 @@ namespace Loggin
 
 
 
-        public void TopSecret() {
+        public void TopSecret()
+        {
 
             lbCodMov.Visible = false;
             lbIdEquipo.Visible = false;

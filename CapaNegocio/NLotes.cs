@@ -28,13 +28,15 @@ namespace CapaNegocio
         public string Gestion { get => gestion; set => gestion = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
 
-        public string ingresarLote(DateTime fecha,int cantidad, string gestion) {
+        public string ingresarLote(DateTime fecha,int cantidad, string gestion, int id_usuario, DateTime fecha_modificacion) {
 
             DLotes k = new DLotes();
 
             k.Fecha_ingreso = fecha;
             k.Cantidad = cantidad;
             k.Gestion = gestion;
+            k.Id_usuario = id_usuario;
+            k.Fecha_modificacion = fecha_modificacion;
 
             return k.insertarLote(k);
 

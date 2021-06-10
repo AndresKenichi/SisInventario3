@@ -104,7 +104,7 @@ namespace Loggin
             foreach (DataGridViewRow dv in gridLotes.Rows)
             {
 
-                mss = j.ingresarLote(Convert.ToDateTime(dv.Cells[1].Value), Convert.ToInt32(dv.Cells[2].Value), Convert.ToString(dv.Cells[3].Value));
+                mss = j.ingresarLote(Convert.ToDateTime(dv.Cells[1].Value), Convert.ToInt32(dv.Cells[2].Value), Convert.ToString(dv.Cells[3].Value),1,DateTime.Now);
 
             }
 

@@ -21,7 +21,7 @@ namespace Loggin
         public Equipos()
         {
             InitializeComponent();
-            this.ttMensaje.SetToolTip(this.txtIdprogramacion, "Ingrese el nombre del Empleado");
+            this.ttMensaje.SetToolTip(this.txtIdprogramacion, "Ingrese el id de programacion");
             this.ttMensaje.SetToolTip(this.cbTipoE, "Seleccione un cargo");
             this.txtIdequipo.ReadOnly = true;
             
@@ -385,6 +385,16 @@ namespace Loggin
         {
             NEquipos Obj = new NEquipos();
             Obj.createPDF();
+        }
+
+        private void dtFecha_Cad_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

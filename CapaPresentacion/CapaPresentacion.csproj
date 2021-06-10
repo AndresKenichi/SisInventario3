@@ -6,7 +6,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Report1.rdlc" />
+    <None Remove="ReporteEquipo2.rdlc" />
+    <None Remove="ReportEmpleados.rdlc" />
+    <None Remove="reporteProcEq.rdlc" />
+    <None Remove="ReportPro.rdlc" />
+    <None Remove="ReportProgramacion.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReporteEquipo2.rdlc" />
+    <EmbeddedResource Include="ReportEmpleados.rdlc" />
+    <EmbeddedResource Include="reporteProcEq.rdlc" />
+    <EmbeddedResource Include="ReportPro.rdlc" />
+    <EmbeddedResource Include="ReportProgramacion.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="itext7" Version="7.1.15" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1449.0" />
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,10 +34,54 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DsEmpleados.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsEmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsprocEquipo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsprocEquipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsprocEquipo1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsprocEquipo1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsprocEquipo2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsprocEquipo2.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsProgramacion.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsProgramacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="dsREmpleados.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsREmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="inventario2DataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>inventario2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -26,6 +90,41 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DsEmpleados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsEmpleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsprocEquipo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsprocEquipo.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsprocEquipo1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsprocEquipo1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsprocEquipo2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsprocEquipo2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsProgramacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProgramacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="dsREmpleados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsREmpleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="inventario2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>inventario2DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
